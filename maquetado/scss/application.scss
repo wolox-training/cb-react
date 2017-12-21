@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'equalizer';
+@import 'styles';
+
+.nav {
+	height: 90px;
+	width: 100%;
+	padding: 0 25px;
+	position: fixed;
+	box-shadow: 0px 5px 10px $grey;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.nv-logo {
+		width: 250px;
+	}
+
+	.nv-text {
+		font-size: 35px;
+	}
+}
