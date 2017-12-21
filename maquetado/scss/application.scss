@@ -1,15 +1,10 @@
 @import 'colors';
 @import 'equalizer';
+@import 'styles';
 
 $triangle-height: 90px;
 $triangle-width: 100px;
 $tech-logo-size: 100px;
-
-bodysize {
-	font-family: 'Roboto', sans-serif;
-	margin: 0;
-	padding: 0;
-}
 
 .nav {
 	height: 90px;
