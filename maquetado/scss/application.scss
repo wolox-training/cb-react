@@ -32,25 +32,22 @@ $font-small: 12px;
 }
 
 .main-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	padding: 50px 100px;
 
 	.title {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		align-self: flex-start;
 		margin: 100px 0 0 0;
+		display: grid;
+		grid-template-columns: [col1-start] 100px [col1-end col2-start] 65px [col2-end col3-start] auto [col3-end];
+		align-items: center;
 
 		.triangle {
+			grid-column: col2-start / col2-end;
 			height: $triangle-height;
 			width: $triangle-width;
 		}
 
 		.section-title {
-			margin: 0 0 0 -33px;
+			grid-column: col3-start / col3-end;
 			font-size: 25px;
 		}
 	}
@@ -59,11 +56,11 @@ $font-small: 12px;
 		width: 100%;
 		display: grid;
 		grid-template-columns:
-			[col1-start] 40% 
+			[col1-start] 500px 
 			[col1-end col2-start] 200px
 			[col2-end col3-start] auto
 			[col3-end];
-		grid-template-rows: 33% 33% 33%;
+		grid-template-rows: [row1-start] 33% [row1-end row2-start] 33% [row2-end row3-start] auto [row3-end];
 		grid-column-gap: 40px;
 
 		.tech-card {
@@ -79,10 +76,8 @@ $font-small: 12px;
 			position: relative;
 
 			&.col1 {
-				/*height: 100%;*/
-				/*grid*/
 				grid-column: col1-start / col1-end;
-				grid-row: 1 / 4;
+				grid-row: row1-start / row3-end;
 				justify-self: end;
 				align-self: center;
 				border-right: 2px solid $green;
