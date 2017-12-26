@@ -1,14 +1,7 @@
-@import 'colors';
+@import 'variables/_colors';
+@import 'variables/_sizes';
 @import 'equalizer';
 @import 'styles';
-
-$triangle-height: 90px;
-$triangle-width: 100px;
-$tech-logo-size: 100px;
-$footer-height: 30vh;
-$font-big: 24px;
-$font-medium: 16px;
-$font-small: 12px;
 
 .nav {
 	height: 90px;
