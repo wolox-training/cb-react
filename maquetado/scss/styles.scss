@@ -34,14 +34,21 @@ body {
 		align-items: center;
 
 		.triangle {
-			grid-column: col2-start / col2-end;
-			height: $triangle-height;
-			width: $triangle-width;
 		}
 
 		.section-title {
 			grid-column: col3-start / col3-end;
 			font-size: 25px;
+		}
+
+		&::before {
+			content: url('assets/triangle.svg');
+			height: $triangle-height;
+			width: $triangle-width;
+			grid-column: col2-start / col2-end;
+			height: $triangle-height;
+			width: $triangle-width;
+
 		}
 	}
 
