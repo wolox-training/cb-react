@@ -1,0 +1,51 @@
+@media screen and (max-width: 400px) {
+	.nav {
+		.nv-text {
+			display: none;
+		}		
+	}
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+
+		.title {
+			display: flex;
+
+			.section-title {
+				position: relative;
+				left: -23px;
+			}
+
+			&::before {
+				background-image: url('assets/triangle.svg') ;
+			    background-size: $triangle-height 90px;
+			    display: inline-block;
+			    width: $triangle-width; 
+			    height: $triangle-height;
+			    content:"";
+			    position: absolute;
+			    left: 30px;
+			}
+		}
+
+		.techs {
+			display: flex;
+			flex-direction: column;
+
+			.tech-card {
+				border-bottom: 2px solid $green;
+
+				&.col1 {
+					border-right: transparent;
+				}
+
+				&.last-card {
+					border-bottom: transparent;
+				}
+			}
+		}
+	}
+}
