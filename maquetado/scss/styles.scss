@@ -45,8 +45,6 @@ body {
 			height: $triangle-height;
 			width: $triangle-width;
 			grid-column: col2-start / col2-end;
-			height: $triangle-height;
-			width: $triangle-width;
 		}
 	}
 
@@ -126,6 +124,7 @@ body {
 
 .footer {
 	height: $footer-height;
+	width: 100%;
 	background-color: $blue;
 	color: white;
 	display: flex;
