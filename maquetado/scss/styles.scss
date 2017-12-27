@@ -30,21 +30,23 @@ body {
 	margin: 0 auto;
 
 	.title {
-		margin: 100px 0 0 0;
-		display: grid;
-		grid-template-columns: [col1-start] 100px [col1-end col2-start] 65px [col2-end col3-start] auto [col3-end];
-		align-items: center;
-
-		.section-title {
-			grid-column: col3-start / col3-end;
-			font-size: 25px;
-		}
-
-		&::before {
-			content: url('assets/triangle.svg');
-			height: $triangle-height;
-			width: $triangle-width;
-			grid-column: col2-start / col2-end;
+			margin: 120px 0 100px 60px;
+	
+			.section-title {
+				font-size: $font-big;
+				position: relative;
+				top: 30px;
+				left: 60px;
+			}
+			&::before {
+			    background-image: url('assets/triangle.svg') ;
+			    background-size: $triangle-height 90px;
+			    display: inline-block;
+			    width: $triangle-width; 
+			    height: $triangle-height;
+			    content:"";
+			    position: absolute;
+			}
 		}
 	}
 
