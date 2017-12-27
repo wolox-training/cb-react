@@ -25,8 +25,10 @@ body {
 }
 
 .main-content {
-	padding: 50px 80px;
-	max-width: 1300px;
+	display: flex;
+	flex-direction: column;
+	padding: 50px 100px;
+	max-width: 1500px;
 	margin: 0 auto;
 
 	.title {
@@ -38,6 +40,7 @@ body {
 			top: 30px;
 			left: 60px;
 		}
+
 		&::before {
 		    background-image: url('assets/triangle.svg') ;
 		    background-size: $triangle-height 90px;
@@ -49,15 +52,12 @@ body {
 		}
 	}
 
+
 	.techs {
 		width: 100%;
 		display: grid;
-		grid-template-columns:
-			[col1-start] 500px 
-			[col1-end col2-start] 200px
-			[col2-end col3-start] auto
-			[col3-end];
-		grid-template-rows: [row1-start] 33% [row1-end row2-start] 33% [row2-end row3-start] auto [row3-end];
+		grid-template-columns: 450px 200px auto;
+		grid-template-rows: repeat(3, max-content);
 		grid-column-gap: 40px;
 
 		.tech-card {
@@ -72,28 +72,25 @@ body {
 			line-height: 30px;
 			position: relative;
 
-			&.col1 {
-				grid-column: col1-start / col1-end;
-				grid-row: row1-start / row3-end;
+			&.first-card {
+				grid-column: 1 / 2;
+				grid-row: 1 / 4;
 				justify-self: end;
 				align-self: center;
 				border-right: 2px solid $green;
-
-				&.first-card {
-					height: 100%;
-					display: flex;
-					justify-content: center;
-				}
+				height: 100%;
+				display: flex;
+				justify-content: center;
 			}
 
 			&.col2 {
-				grid-column: col2-start / col2-end;
+				grid-column: 2 / 3;
 				justify-self: start;
 				align-self: center;
 			}
 
 			&.col3 {
-				grid-column: col3-start / col3-end;
+				grid-column: 3 / 4;
 				justify-self: start;
 				align-self: center;
 			}
@@ -125,6 +122,7 @@ body {
 
 .footer {
 	height: $footer-height;
+	width: 100%;
 	background-color: $blue;
 	color: white;
 	display: flex;
