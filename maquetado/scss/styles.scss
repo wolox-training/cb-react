@@ -26,15 +26,14 @@ body {
 
 .main-content {
 	padding: 50px 100px;
+	max-width: 1300px;
+	margin: 0 auto;
 
 	.title {
 		margin: 100px 0 0 0;
 		display: grid;
 		grid-template-columns: [col1-start] 100px [col1-end col2-start] 65px [col2-end col3-start] auto [col3-end];
 		align-items: center;
-
-		.triangle {
-		}
 
 		.section-title {
 			grid-column: col3-start / col3-end;
