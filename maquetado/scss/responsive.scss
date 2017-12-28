@@ -1,0 +1,33 @@
+@media screen and (max-width: 400px) {
+	.nav {
+		.nv-text {
+			display: none;
+		}		
+	}
+
+	.main-content {
+		padding: 0;
+
+		.title {
+			margin: 120px 0 100px 30px;
+		}
+
+		.techs {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.tech-card {
+				border-bottom: 2px solid $green;
+
+				&:first-child {
+					border-right: transparent;
+				}
+
+				&:last-child {
+					border-bottom: transparent;
+				}
+			}
+		}
+	}
+}

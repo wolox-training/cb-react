@@ -33,14 +33,14 @@ body {
 
 	.title {
 		margin: 120px 0 100px 60px;
-	
+
 		.section-title {
 			font-size: $font-big;
 			position: relative;
 			top: 30px;
 			left: 60px;
 		}
-		
+
 		&::before {
 		    background-image: url('assets/triangle.svg') ;
 		    background-size: $triangle-height 90px;
