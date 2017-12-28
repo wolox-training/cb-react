@@ -6,29 +6,10 @@
 	}
 
 	.main-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		padding: 0;
 
 		.title {
-			display: flex;
-
-			.section-title {
-				position: relative;
-				left: -23px;
-			}
-
-			&::before {
-				background-image: url('assets/triangle.svg') ;
-			    background-size: $triangle-height 90px;
-			    display: inline-block;
-			    width: $triangle-width; 
-			    height: $triangle-height;
-			    content:"";
-			    position: absolute;
-			    left: 30px;
-			}
+			margin: 120px 0 100px 30px;
 		}
 
 		.techs {
