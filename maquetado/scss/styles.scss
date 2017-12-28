@@ -83,18 +83,6 @@ body {
 				justify-content: center;
 			}
 
-			&.col2 {
-				grid-column: 2 / 3;
-				justify-self: start;
-				align-self: center;
-			}
-
-			&.col3 {
-				grid-column: 3 / 4;
-				justify-self: start;
-				align-self: center;
-			}
-
 			.tech-logo {
 				height: $tech-logo-size;
 				width: $tech-logo-size;
