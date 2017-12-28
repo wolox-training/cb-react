@@ -20,11 +20,11 @@
 			.tech-card {
 				border-bottom: 2px solid $green;
 
-				&.first-card {
+				&:first-child {
 					border-right: transparent;
 				}
 
-				&.last-card {
+				&:last-child {
 					border-bottom: transparent;
 				}
 			}
