@@ -1,0 +1,32 @@
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 760px;
+  height: 100%;
+  padding: 60px 0 ;
+
+  .book-card {
+    margin: 20px 30px;
+    width: 128px;
+    height: 230px;
+
+    .book-cover {
+      background: #d8d8d8;
+      height: 182px;
+      width: 128px;
+      content: url('../../../assets/default_book.svg');
+    }
+
+    .book-title {
+      margin: 10px 0 0 0;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+    }
+
+    .book-author {
+      font-size: 12px;
+    }
+  }
+}

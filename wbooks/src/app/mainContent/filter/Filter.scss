@@ -1,0 +1,39 @@
+
+.filter-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .filter-selection {
+    background: #fff;
+    padding: 0 20px;
+    width: 240px;
+    height: 40px;
+    border: none;
+    color: grey;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .search-term {
+    margin: 0 0 0 30px;
+    padding: 0 0 0 20px;
+    width: 240px;
+    height: 40px;
+    border: none;
+    color: grey;
+    font-style: italic;
+    font-size: 14px;
+  }
+  .search-button {
+    background: #a5cd39;
+    width:40px;
+    height:40px;
+    border-radius: 1px;
+    border-style: none;
+
+    &::after {
+      content: url('../../../assets/search.svg');
+    }
+  }
+}
