@@ -2,6 +2,7 @@ import React from 'react';
 import './BookList.css';
 
 function BookList(props) {
+  //TODO add a unique key to each item
 
   const list = props.books.map((book) => {
     return(
