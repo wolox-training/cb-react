@@ -1,0 +1,12 @@
+.navBar {
+  background: #ffffff;
+  box-shadow: 0px 2px 7px 3px rgba(0, 0, 0, 0.1);
+  height: 90px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navBar .logo {
+    content: url("../../assets/wbooks_logo.svg");
+    height: 80px;
+    width: 180px; }
