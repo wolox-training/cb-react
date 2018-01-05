@@ -22,18 +22,23 @@ class Filter extends React.Component {
     });
   }
 
-  handleSubmit = () => {
+// TODO change this to use the event target
+  handleSubmit = (event) => {
+    console.log(this.state.filterSelection,this.state.filterText);
+    event.preventDefault();
     this.props.onFilterSubmit(this.state.filterSelection, this.state.filterText);
   }
 
   render() {
     return (
-      <form className="filter-bar" onSubmit={this.handleSubmit}>
+      <form className="filter-form" onSubmit={this.handleSubmit}>
         <select
+          //defaultValue="default"
           className="filter-selection"
+          value={this.state.filterSelection}
           onChange={this.handleSelection}
         >
-          <option value="" disabled selected>Seleccionar filtro</option>
+          <option value="" disabled hidden>Seleccionar filtro</option>
           <option value="name">nombre</option>
           <option value="author">autor</option>
         </select>
@@ -41,6 +46,7 @@ class Filter extends React.Component {
           className="search-term"
           type="text"
           placeholder="Buscar..."
+          value={this.state.filtertext}
           onChange={this.handleFilterTextChange}
         />
         <button type="submit" className="search-button"></button>
