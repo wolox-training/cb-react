@@ -5,16 +5,17 @@
   justify-content: space-between;
   align-items: center;
 
-  .notifications {
-    content: url('../../../assets/notifications.svg');
+  .control {
     width: 30px;
     height: 30px;
   }
 
+  .notifications {
+    content: url('../../../assets/notifications.svg');
+  }
+
   .add-button {
     content: url('../../../assets/add_book.svg');
-    width: 30px;
-    height: 30px;
   }
 
   .user-control {
