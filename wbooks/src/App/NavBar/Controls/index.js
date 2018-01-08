@@ -5,8 +5,8 @@ class Controls extends React.Component {
   render() {
     return(
       <div className="controls">
-        <div className="notifications"></div>
-        <div className="add-button"></div>
+        <div className="notifications control"></div>
+        <div className="add-button control"></div>
         <div className="user-control"></div>
       </div>
     )
