@@ -36,7 +36,7 @@ class Filter extends React.Component {
           onChange={this.handleSelection}
         >
           <option value="" disabled hidden>Seleccionar filtro</option>
-          <option value="name">nombre</option>
+          <option value="title">nombre</option>
           <option value="author">autor</option>
         </select>
         <input
