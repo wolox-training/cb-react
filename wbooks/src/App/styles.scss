@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '../variables/_colors';
 
 .App {
   font-family: Roboto;
@@ -28,4 +29,36 @@ textarea {
   &:focus {
     outline: none;
   }
+}
+
+button {
+  height: 40px;
+  width: 190px;
+  border-style: none;
+  margin: 15px 0 0 0;
+  color: $white;
+  font-size: 20px;
+}
+
+.green-background {
+  background-color: $green;
+}
+
+.blue-background {
+  background-color: $blue;
+}
+
+.book-cover {
+  height: 182px;
+  width: 128px;
+}
+
+.mini-book-cover {
+  height: 124px;
+  width: 87px;
+  margin: 0 27px;
+}
+
+.no-cover {
+  background: $light-grey url('../assets/default_book.svg') center no-repeat;
 }
