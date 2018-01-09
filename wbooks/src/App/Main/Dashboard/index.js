@@ -1,7 +1,6 @@
 import React from 'react';
 import Filter from './Filter';
 import BooksList from './BooksList';
-import './styles.css';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -22,7 +21,7 @@ class Dashboard extends React.Component {
   render() {
 
     return (
-      <div className='main-content'>
+      <div>
         <Filter
           onFilterSubmit={this.handleFilterSubmit}
         />
