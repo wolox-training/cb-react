@@ -12,15 +12,6 @@
     height: 230px;
     color: inherit;
     text-decoration: none;
-
-    .book-cover {
-      background: $light-grey;
-      height: 182px;
-      width: 128px;
-
-      &.no-cover {
-        content: url('../../../../assets/default_book.svg');        
-      }
     }
 
     .book-title {
