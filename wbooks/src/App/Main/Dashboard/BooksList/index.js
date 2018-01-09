@@ -13,9 +13,11 @@ class BookList extends React.Component {
     }
 
     const list = selectedBooks.map((book) => {
+      let cover = (book.image_url ? <img className="book-cover" src={book.image_url} alt="" /> : <div className="book-cover no-cover"></div>);
       return(
+        // <div className="book-cover"></div>
         <Link to={`/books/${book.id}`} className="book-card" key={book.id}>
-          <div className="book-cover"></div>
+          {cover}
           <div className="book-title">{book.title}</div>
           <div className="book-author">{book.author}</div>
         </Link>

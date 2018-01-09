@@ -1,3 +1,5 @@
+@import '../../../../variables/_colors';
+
 .book-list {
   display: flex;
   flex-wrap: wrap;
@@ -12,10 +14,13 @@
     text-decoration: none;
 
     .book-cover {
-      background: #d8d8d8;
+      background: $light-grey;
       height: 182px;
       width: 128px;
-      content: url('../../../../assets/default_book.svg');
+
+      &.no-cover {
+        content: url('../../../../assets/default_book.svg');        
+      }
     }
 
     .book-title {

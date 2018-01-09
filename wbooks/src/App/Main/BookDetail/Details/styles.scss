@@ -1,0 +1,43 @@
+@import '../../../../variables/_colors';
+
+.book-details {
+  padding: 30px 0;
+  display: flex;
+
+  .book-cover {
+    margin: 0 20px 0 0;
+    height: 270px;
+    width: 190px;
+    background-color: $light-grey;
+  }
+  
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .details-title {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .details-subtitle {
+      font-size: 16px;
+    }
+
+    .book-review {
+      margin: 0 0 12px 0;
+      color: $grey;
+    }
+
+    .rent-button {
+      height: 40px;
+      width: 190px;
+      background-color: $blue;
+      border-style: none;
+      color: $white;
+      font-size: 20px;
+    }
+  }
+}
