@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import '../variables/_colors';
 
-.App {
-  font-family: Roboto;
-}
-
 h1,
 h2,
 h3,
@@ -46,6 +42,10 @@ button {
 
 .blue-background {
   background-color: $blue;
+}
+
+.red-background {
+  background-color: $red;
 }
 
 .book-cover {

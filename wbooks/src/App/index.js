@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './styles.css';
-import NavBar from './NavBar';
-import Main from './Main'
+import Home from './Home';
+import Login from './Login';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Main books={this.props.books}/>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={() => <Home books={this.props.books} />} />
+          <Route path='/login' component={Login} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

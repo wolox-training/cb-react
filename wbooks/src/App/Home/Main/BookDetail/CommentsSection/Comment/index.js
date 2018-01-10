@@ -4,7 +4,6 @@ import './styles.css';
 class Comment extends React.Component {
   render() {
      return (
-
        <div className="comment-area" >
          <div className="user-control" ></div>
          <div className="comment-element">

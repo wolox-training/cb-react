@@ -1,4 +1,4 @@
-@import '../../../../variables/_colors';
+@import '../../../../../variables/_colors';
 
 .book-details {
   display: flex;
@@ -9,7 +9,7 @@
     width: 180px;
 
     &.no-cover {
-      background: $light-grey url('../../../../assets/default_book.svg') center no-repeat;
+      background: $light-grey url('../../../../../assets/default_book.svg') center no-repeat;
     }
   }
 

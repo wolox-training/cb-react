@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   render() {
     return (
     <header className="navBar">
-      <Link to='/' className="logo"></Link>
+      <Link to='/dashboard' className="logo"></Link>
       <Controls />
     </header>
   );
