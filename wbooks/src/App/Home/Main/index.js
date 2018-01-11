@@ -10,9 +10,9 @@ class Main extends React.Component {
     return(
       <div className="main-content">
         <Switch>
-          <Route path='/dashboard' render={() => <Dashboard books={this.props.books} />} />
+          <Route exact path='/' render={() => <Dashboard books={this.props.books} />} />
           <Route path='/books/:number' render={({match}) => <BookDetail books={this.props.books} match={match} />}/>
-          <Route path='/profile/:name' component={Profile} />
+          <Route path='/profile/:id' component={Profile} />
         </Switch>
       </div>
     );
