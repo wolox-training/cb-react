@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './styles.css';
 
 class Login extends Component {
@@ -18,7 +18,6 @@ class Login extends Component {
           onClick={this.props.login}
           >INGRESAR CON GOOGLE
         </button>
-        <Link to="/signup">Sign Up</Link>
       </div>
     );
   }
