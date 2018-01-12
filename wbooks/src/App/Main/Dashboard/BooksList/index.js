@@ -13,19 +13,26 @@ class BookList extends React.Component {
       });
     }
 
-    const list = selectedBooks.map((book) => {
-      let cover = (book.image_url ? <img className="book-cover" src={book.image_url} alt="" /> : <div className="book-cover no-cover"></div>);
-      return(
-        // <div className="book-cover"></div>
-        <Link to={`/books/${book.id}`} className="book-card" key={book.id}>
-          {cover}
-          <div className="book-title">{book.title}</div>
-          <div className="book-author">{book.author}</div>
-        </Link>
-      );
-    });
-
-    return <div className="book-list">{list}</div>;
+    return (
+      <div className="book-list">
+        {
+          selectedBooks.map((book) => {
+            return(
+              <Link to={`/books/${book.id}`} className="book-card" key={book.id}>
+                {
+                  book.image_url ? 
+                    <img className="book-cover" src={book.image_url} alt="" />
+                    :
+                    <div className="book-cover no-cover"></div>
+                }
+                <div className="book-title">{book.title}</div>
+                <div className="book-author">{book.author}</div>
+              </Link>
+            );
+          })
+        }
+      </div>
+    )
   }
 }
 
