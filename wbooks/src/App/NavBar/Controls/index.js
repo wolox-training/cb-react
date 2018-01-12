@@ -1,4 +1,5 @@
 import React from 'react';
+import UserAvatar from '../../UserAvatar';
 import './styles.css';
 
 class Controls extends React.Component {
@@ -7,7 +8,7 @@ class Controls extends React.Component {
       <div className="controls">
         <div className="notifications control"></div>
         <div className="add-button control"></div>
-        <div className="user-control"></div>
+        <UserAvatar />
       </div>
     )
   }
