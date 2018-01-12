@@ -11,7 +11,7 @@ class Main extends React.Component {
       <div className="main-content">
         <Switch>
           <Route exact path='/' render={() => <Dashboard books={this.props.books} />} />
-          <Route path='/books/:number' render={({match}) => <BookDetail books={this.props.books} match={match} />}/>
+          <Route path='/books/:id' render={({match}) => <BookDetail books={this.props.books} match={match} />}/>
           <Route path='/profile/:name' component={Profile} />
         </Switch>
       </div>
