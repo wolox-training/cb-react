@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import BookDetail from './BookDetail';
 import Profile from './Profile';
+import * as propTypes from '../Constants/propTypes';
 import './styles.css';
 
 class Main extends React.Component {
@@ -18,5 +19,7 @@ class Main extends React.Component {
     );
   }
 }
+
+Main.propTypes = propTypes.booksPropTypes;
 
 export default Main;

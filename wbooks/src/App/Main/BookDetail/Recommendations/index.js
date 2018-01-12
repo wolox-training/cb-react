@@ -1,4 +1,5 @@
 import React from 'react';
+import * as propTypes from '../../../Constants/propTypes';
 import './styles.css';
 
 class Recommendations extends React.Component {
@@ -16,5 +17,7 @@ class Recommendations extends React.Component {
     );
   }
 }
+
+Recommendations.propTypes = propTypes.booksPropTypes;
 
 export default Recommendations;

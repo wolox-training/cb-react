@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BookCover from '../../BookCover';
+import * as propTypes from '../../../Constants/propTypes';
 import './styles.css';
 
 class Details extends React.Component {
   render() {
     return(
       <div className="section book-details">
-        <BookCover url={this.props.bookInfo.image_url}/>
+        <BookCover url={this.props.book.image_url}/>
         <div className="book-info">
-          <h3 className="details-title">{this.props.bookInfo.title}</h3>
-          <h4 className="details-subtitle">{this.props.bookInfo.author}</h4>
-          <h4 className="details-subtitle">{this.props.bookInfo.year}</h4>
+          <h3 className="details-title">{this.props.book.title}</h3>
+          <h4 className="details-subtitle">{this.props.book.author}</h4>
+          <h4 className="details-subtitle">{this.props.book.year}</h4>
           <h4 className="details-subtitle">Temática</h4>
           <p className="book-review">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -24,16 +24,6 @@ class Details extends React.Component {
   }
 }
 
-Details.propTypes = {
-  bookInfo: PropTypes.shape({
-    id: PropTypes.number,
-    author:PropTypes.string,
-    title:PropTypes.string,
-    genre:PropTypes.string,
-    publisher:PropTypes.string,
-    year: PropTypes.string,
-    image_url:PropTypes.string,
-  })
-}
+Details.propTypes = propTypes.bookPropTypes;
 
 export default Details;
