@@ -26,7 +26,6 @@ class Dashboard extends React.Component {
           onFilterSubmit={this.handleFilterSubmit}
         />
         <BooksList
-          books={this.props.books}
           filterSelection={this.state.filterSelection}
           filterText={this.state.filterText} />
       </div>

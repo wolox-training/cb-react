@@ -9,7 +9,7 @@ const books = require("./books.json");
 
 ReactDOM.render((
   <BrowserRouter>
-    <App books={books} />
+    <App />
   </BrowserRouter>
   ), document.getElementById('root'));
 registerServiceWorker();

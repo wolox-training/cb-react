@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Main books={this.props.books}/>
+        <Main />
       </div>
     );
   }

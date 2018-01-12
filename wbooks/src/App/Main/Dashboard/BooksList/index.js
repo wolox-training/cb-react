@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import BookCover from '../../BookCover';
 import './styles.css';
 
+const books = require('../../../../books.json');
+
 class BookList extends React.Component {
 
   render() {
-    let selectedBooks = this.props.books;
+    let selectedBooks = books;
     if(this.props.filterSelection !== '' && this.props.filterText !== '') {
       selectedBooks = selectedBooks.filter((book) => {
         return (book[this.props.filterSelection].toLowerCase().includes(this.props.filterText.toLowerCase()))
