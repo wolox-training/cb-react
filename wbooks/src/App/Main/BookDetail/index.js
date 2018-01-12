@@ -10,7 +10,7 @@ class BookDetail extends React.Component {
     const id = this.props.match.params.number - 1;
     return (
       <div>
-        <Link to='/' className='back-link' >{"< Volver"}</Link>
+        <Link to='/' className='back-link' >"Volver"</Link>
         <Details bookInfo={this.props.books[id]}/>
         <Recommendations books={this.props.books} />
         <CommentsSection />
