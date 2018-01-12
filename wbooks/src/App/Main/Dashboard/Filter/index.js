@@ -1,4 +1,5 @@
 import React from'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class Filter extends React.Component {
@@ -50,6 +51,10 @@ class Filter extends React.Component {
       </form>
     )
   }
+}
+
+Filter.propTypes = {
+  onFilterSubmit: PropTypes.func
 }
 
 export default Filter;

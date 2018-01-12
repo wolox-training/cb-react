@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 import { Link } from 'react-router-dom';
 
@@ -26,6 +27,11 @@ class BookList extends React.Component {
 
     return <div className="book-list">{list}</div>;
   }
+}
+
+BookList.propTypes = {
+  filterSelection: PropTypes.string,
+  filterText: PropTypes.string
 }
 
 export default BookList;

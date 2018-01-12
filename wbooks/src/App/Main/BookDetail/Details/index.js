@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class Details extends React.Component {
@@ -26,6 +27,18 @@ class Details extends React.Component {
       </div>
     );
   }
+}
+
+Details.propTypes = {
+  bookInfo: PropTypes.shape({
+    id: PropTypes.number,
+    author:PropTypes.string,
+    title:PropTypes.string,
+    genre:PropTypes.string,
+    publisher:PropTypes.string,
+    year: PropTypes.string,
+    image_url:PropTypes.string,
+  })
 }
 
 export default Details;

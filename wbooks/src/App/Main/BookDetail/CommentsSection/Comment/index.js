@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class Comment extends React.Component {
   render() {
      return (
-
        <div className="comment-area" >
          <div className="user-control" ></div>
          <div className="comment-element">
@@ -16,5 +16,11 @@ class Comment extends React.Component {
      );
   }
 }
+
+Comment.propTypes = {
+  user: PropTypes.string,
+  date: PropTypes.string,
+  message: PropTypes.string
+};
 
 export default Comment;
