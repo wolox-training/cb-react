@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BookCover from '../../BookCover';
 import './styles.css';
 
 class Details extends React.Component {
   render() {
     return(
       <div className="section book-details">
-        {
-          this.props.bookInfo.image_url ?
-            <img className="book-cover" alt="" src={this.props.bookInfo.image_url} />
-          :
-            <div className="book-cover no-cover"></div>
-        }
+        <BookCover url={this.props.bookInfo.image_url}/>
         <div className="book-info">
           <h3 className="details-title">{this.props.bookInfo.title}</h3>
           <h4 className="details-subtitle">{this.props.bookInfo.author}</h4>

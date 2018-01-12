@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.css';
 import { Link } from 'react-router-dom';
+import BookCover from '../../BookCover';
+import './styles.css';
 
 class BookList extends React.Component {
 
@@ -19,12 +20,7 @@ class BookList extends React.Component {
           selectedBooks.map((book) => {
             return(
               <Link to={`/books/${book.id}`} className="book-card" key={book.id}>
-                {
-                  book.image_url ? 
-                    <img className="book-cover" src={book.image_url} alt="" />
-                    :
-                    <div className="book-cover no-cover"></div>
-                }
+                <BookCover url={book.image_url} />
                 <div className="book-title">{book.title}</div>
                 <div className="book-author">{book.author}</div>
               </Link>
