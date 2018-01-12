@@ -8,11 +8,9 @@ class Comment extends React.Component {
        <div className="comment-area" >
          <div className="user-control" ></div>
          <div className="comment-element">
-          <h2 className="section-subtitle">User</h2>
-          <h3>xx/xx/xxx</h3>
-          <p className="comment">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          <h2 className="section-subtitle">{this.props.user}</h2>
+          <h3>{this.props.date}</h3>
+          <p className="comment">{this.props.message}</p>
          </div>
        </div>
      );

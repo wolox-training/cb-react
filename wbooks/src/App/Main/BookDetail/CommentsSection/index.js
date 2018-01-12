@@ -5,12 +5,19 @@ import './styles.css';
 
 class CommentsSection extends React.Component {
   render() {
+    const comments = require('./comments.json').map(comment =>
+      <Comment
+        key={comment.user}
+        user={comment.user}
+        date={comment.date}
+        message={comment.message}
+      />
+    );
     return(
       <div className="section" >
         <h2 className="section-title">Comentarios</h2>
         <AddComment />
-        <Comment />
-        <Comment />
+        {comments}
       </div>
     );
   }
