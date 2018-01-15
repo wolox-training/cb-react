@@ -38,14 +38,26 @@ button {
 
 .green-background {
   background-color: $green;
+
+  &:active {
+    background-color: $dark-green;
+  }
 }
 
 .blue-background {
   background-color: $blue;
+
+  &:active {
+    background-color: $dark-blue;
+  }
 }
 
 .red-background {
   background-color: $red;
+
+  &:active {
+    background-color: $dark-red;
+  }
 }
 
 .book-cover {

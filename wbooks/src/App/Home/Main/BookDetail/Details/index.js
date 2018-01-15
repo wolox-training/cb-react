@@ -1,21 +1,17 @@
 import React from 'react';
+import BookCover from '../../BookCover';
+import * as propTypes from '../../../../Constants/propTypes';
 import './styles.css';
 
 class Details extends React.Component {
   render() {
-    let cover = (
-      this.props.bookInfo.image_url ?
-        <img className="book-cover" alt="" src={this.props.bookInfo.image_url} />
-      :
-        <div className="book-cover no-cover"></div>
-    );
     return(
       <div className="section book-details">
-        {cover}
+        <BookCover url={this.props.book.image_url}/>
         <div className="book-info">
-          <h3 className="details-title">{this.props.bookInfo.title}</h3>
-          <h4 className="details-subtitle">{this.props.bookInfo.author}</h4>
-          <h4 className="details-subtitle">{this.props.bookInfo.year}</h4>
+          <h3 className="details-title">{this.props.book.title}</h3>
+          <h4 className="details-subtitle">{this.props.book.author}</h4>
+          <h4 className="details-subtitle">{this.props.book.year}</h4>
           <h4 className="details-subtitle">Temática</h4>
           <p className="book-review">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -27,5 +23,7 @@ class Details extends React.Component {
     );
   }
 }
+
+Details.propTypes = propTypes.bookPropTypes;
 
 export default Details;

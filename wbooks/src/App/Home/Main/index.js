@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import BookDetail from './BookDetail';
 import Profile from './Profile';
+import * as propTypes from '../../Constants/propTypes';
 import './styles.css';
 
 class Main extends React.Component {
@@ -10,13 +11,15 @@ class Main extends React.Component {
     return(
       <div className="main-content">
         <Switch>
-          <Route exact path='/' render={() => <Dashboard books={this.props.books} />} />
-          <Route path='/books/:number' render={({match}) => <BookDetail books={this.props.books} match={match} />}/>
+          <Route exact path='/' render={() => <Dashboard />} />
+          <Route path='/books/:id' render={({match}) => <BookDetail match={match} />}/>
           <Route path='/profile/:id' component={Profile} />
         </Switch>
       </div>
     );
   }
 }
+
+Main.propTypes = propTypes.booksPropTypes;
 
 export default Main;

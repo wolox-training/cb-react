@@ -2,16 +2,17 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
 import Main from './Main';
+import { Auth } from '../Auth/authentication';
 
 class Home extends React.Component {
   render() {
-    if(!this.props.isLoggedIn()) {
+    if(!Auth.isLoggedIn()) {
       return <Redirect to="/login" />
     }
     return(
       <div>
         <NavBar />
-        <Main books={this.props.books}/>
+        <Main />
       </div>
     );
   }
