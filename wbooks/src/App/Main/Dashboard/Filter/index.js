@@ -1,4 +1,5 @@
 import React from'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class Filter extends React.Component {
@@ -36,7 +37,7 @@ class Filter extends React.Component {
           onChange={this.handleSelection}
         >
           <option value="" disabled hidden>Seleccionar filtro</option>
-          <option value="name">nombre</option>
+          <option value="title">nombre</option>
           <option value="author">autor</option>
         </select>
         <input
@@ -50,6 +51,10 @@ class Filter extends React.Component {
       </form>
     )
   }
+}
+
+Filter.propTypes = {
+  onFilterSubmit: PropTypes.func
 }
 
 export default Filter;

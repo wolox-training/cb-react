@@ -1,0 +1,27 @@
+[
+  {
+    "user" : "Juan",
+    "date" : "xx/xx/xxxx",
+    "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sapien eu mi finibus, eu rutrum ante rutrum. Nullam sapien felis, consequat a ullamcorper eu, fermentum eu dui. Sed id fringilla sapien, eu aliquam purus."
+  },
+  {
+    "user" : "Pedro",
+    "date" : "xx/xx/xxxx",
+    "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sapien eu mi finibus, eu rutrum ante rutrum. Nullam sapien felis, consequat a ullamcorper eu, fermentum eu dui. Sed id fringilla sapien, eu aliquam purus."
+  },
+  {
+    "user" : "Julia",
+    "date" : "xx/xx/xxxx",
+    "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sapien eu mi finibus, eu rutrum ante rutrum. Nullam sapien felis, consequat a ullamcorper eu, fermentum eu dui. Sed id fringilla sapien, eu aliquam purus."
+  },
+  {
+    "user" : "Marta",
+    "date" : "xx/xx/xxxx",
+    "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sapien eu mi finibus, eu rutrum ante rutrum. Nullam sapien felis, consequat a ullamcorper eu, fermentum eu dui. Sed id fringilla sapien, eu aliquam purus."
+  },
+  {
+    "user" : "Pablo",
+    "date" : "xx/xx/xxxx",
+    "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sapien eu mi finibus, eu rutrum ante rutrum. Nullam sapien felis, consequat a ullamcorper eu, fermentum eu dui. Sed id fringilla sapien, eu aliquam purus."
+  }
+]

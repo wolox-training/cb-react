@@ -1,5 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '../variables/_colors';
 
 .App {
   font-family: Roboto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+input,
+a,
+button,
+select,
+textarea {
+  color: #000;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  height: 40px;
+  width: 190px;
+  border-style: none;
+  margin: 15px 0 0 0;
+  color: $white;
+  font-size: 20px;
+}
+
+.green-background {
+  background-color: $green;
+}
+
+.blue-background {
+  background-color: $blue;
+}
+
+.book-cover {
+  height: 182px;
+  width: 128px;
+}
+
+.mini-book-cover {
+  height: 124px;
+  width: 87px;
+  margin: 0 27px;
+}
+
+.no-cover {
+  background: $light-grey url('../assets/default_book.svg') center no-repeat;
 }

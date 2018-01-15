@@ -1,9 +1,8 @@
 import React from 'react';
 import Filter from './Filter';
 import BooksList from './BooksList';
-import './styles.css';
 
-class MainContent extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,12 +21,11 @@ class MainContent extends React.Component {
   render() {
 
     return (
-      <div className='main-content'>
+      <div>
         <Filter
           onFilterSubmit={this.handleFilterSubmit}
         />
         <BooksList
-          books={this.props.books}
           filterSelection={this.state.filterSelection}
           filterText={this.state.filterText} />
       </div>
@@ -35,4 +33,4 @@ class MainContent extends React.Component {
   }
 }
 
-export default MainContent;
+export default Dashboard;
