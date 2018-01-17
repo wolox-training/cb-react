@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Auth } from '../../Auth/authentication';
+import { Auth } from '../../services/auth-service';
 import './styles.css';
 
 export default class LoginForm extends Component {
