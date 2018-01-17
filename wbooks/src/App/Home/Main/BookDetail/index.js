@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Details from './Details';
 import Recommendations from './Recommendations';
 import CommentsSection from './CommentsSection';
-import * as propTypes from '../../../Constants/propTypes';
+import * as propTypes from '../../../constants/propTypes';
 import './styles.css';
 
 const books = require('../../../../books.json');
