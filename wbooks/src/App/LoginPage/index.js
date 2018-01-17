@@ -24,7 +24,7 @@ export default class LoginPage extends Component {
     }
     return (
       <div className="login-page">
-        <div className="wb_logo" ></div>
+        <div className="wb-logo" ></div>
         <LoginForm redirect={this.redirect} />
         <Link className="signup-link" to="/signup">Sign up</Link>
       </div>
