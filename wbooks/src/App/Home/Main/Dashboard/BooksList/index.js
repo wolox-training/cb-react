@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import BookCover from '../../BookCover';
 import './styles.css';
 
-const books = require('../../../../books.json');
+const books = require('../../../../../books.json');
 
 class BookList extends React.Component {
 

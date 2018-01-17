@@ -1,5 +1,5 @@
 import React from 'react';
-import * as propTypes from '../../../Constants/propTypes';
+import * as propTypes from '../../../../constants/propTypes';
 import './styles.css';
 
 class Recommendations extends React.Component {

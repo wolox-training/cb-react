@@ -1,6 +1,6 @@
 import React from 'react';
 import BookCover from '../../BookCover';
-import * as propTypes from '../../../Constants/propTypes';
+import * as propTypes from '../../../../constants/propTypes';
 import './styles.css';
 
 class Details extends React.Component {

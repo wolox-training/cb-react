@@ -5,6 +5,7 @@ import AddBookControl from './AddBookControl';
 import './styles.css';
 
 class Controls extends React.Component {
+
   render() {
     return(
       <div className="controls">

@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import BookDetail from './BookDetail';
 import Profile from './Profile';
-import * as propTypes from '../Constants/propTypes';
+import * as propTypes from '../../constants/propTypes';
 import './styles.css';
 
 class Main extends React.Component {
@@ -13,7 +13,7 @@ class Main extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <Dashboard />} />
           <Route path='/books/:id' render={({match}) => <BookDetail match={match} />}/>
-          <Route path='/profile/:name' component={Profile} />
+          <Route path='/profile/:id' component={Profile} />
         </Switch>
       </div>
     );

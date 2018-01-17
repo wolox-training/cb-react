@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { PrivateRoute } from './PrivateRoute';
+import Home from './Home';
+import LoginPage from './LoginPage';
 import './styles.css';
-import NavBar from './NavBar';
-import Main from './Main'
-import * as propTypes from './Constants/propTypes';
+
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Main />
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login" component={LoginPage} />
+          <PrivateRoute path="/" component={Home} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
-
-App.propTypes = propTypes.booksPropTypes;
 
 export default App;

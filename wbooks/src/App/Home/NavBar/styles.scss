@@ -1,0 +1,34 @@
+.navBar {
+  background:#ffffff;
+  box-shadow:0px 2px 7px 3px rgba(0,0,0,0.10);
+  height:90px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+
+    }
+    &:hover {
+      display: block;
+    }
+  }
+
+  .logo {
+    content: url('../../../assets/wbooks_logo.svg');
+    height: 80px;
+    width: 180px;
+  }
+
+}
