@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Auth } from '../../Auth/authentication';
-import { regex } from '../../Constants/regex';
+import { Auth } from '../../services/auth-service';
+import { stringValidator } from '../../constants/stringValidator';
 import './styles.css';
 
 export default class SignupForm extends Component {
@@ -74,7 +74,7 @@ export default class SignupForm extends Component {
   }
 
   invalidName = () => {
-    if(regex.matchNumber(this.state.name)){
+    if(stringValidator.matchNumber(this.state.name)){
       this.setState({
         error: true,
         errorMsg: 'El nombre no puede contener números'
@@ -84,7 +84,7 @@ export default class SignupForm extends Component {
     return false
   }
   invalidLastName = () => {
-    if(regex.matchNumber(this.state.lastName)){
+    if(stringValidator.matchNumber(this.state.lastName)){
       this.setState({
         error: true,
         errorMsg: 'El apellido no puede contener números'
@@ -100,15 +100,13 @@ export default class SignupForm extends Component {
         error: true,
         errorMsg: 'La password debe contener '+(this.state.pass.length < 8 ? 'al menos 8' : 'menos de 52')+' caracteres'
       });
-      console.log(this.state.pass);
       return true
     }
-    if(regex.noNumberOrLetter(this.state.pass)) {
+    if(stringValidator.noNumberOrLetter(this.state.pass)) {
       this.setState({
         error: true,
         errorMsg: 'La password debe contener al menos un número y una letra'
       });
-      console.log(this.state.pass);
       return true;
     }
     return false
@@ -129,7 +127,6 @@ export default class SignupForm extends Component {
     if(this.isAnyFieldEmpty() || this.invalidName()
         || this.invalidLastName() || this.invalidPass()
         || this.invalidConfirmPass()) {
-      console.log('didnt submit');
       return false
     }
     return true;
@@ -144,7 +141,6 @@ export default class SignupForm extends Component {
                   this.state.pass, this.state.confirmation)
       .then((response) => {
         if(response.status === 201) {
-          console.log('SUMMITED')
           this.props.onRedirect();
         } else {
           this.setState({

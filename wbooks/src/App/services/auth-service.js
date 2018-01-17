@@ -1,28 +1,27 @@
-import axios from 'axios';
-import { API } from './api';
+import { api } from '../config/api';
+import { endpoints } from '../constants/endpoints';
 
 export const Auth = {
   isLoggedIn() {
     return (localStorage.getItem('token') !== null);
   },
   login(user, pass) {
-    return axios.post(API.baseURL + API.loginEndpoint,{
+    return api.post(endpoints.login, {
         email: user,
         password: pass
     })
     .then((response) => {
       localStorage.setItem('token',response.data.access_token);
+      api.defaults.headers.common['Authorization'] = response.data.access_token;
       return (response)
     })
-    .catch((error) => {
-      return error.response.data;
-    });
+    .catch((error) => error.response.data);
   },
   logout() {
     localStorage.removeItem('token');
   },
   signup(name, lastName, email, pass, confirmation) {
-    return axios.post(API.baseURL + API.signupEndpoint, {
+    return api.post(endpoints.signup, {
       user: {
         email: email,
         password: pass,

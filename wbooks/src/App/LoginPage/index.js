@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
-import { Auth } from '../Auth/authentication';
+import { Auth } from '../services/auth-service';
 import './styles.css';
 
 export default class LoginPage extends Component {
@@ -12,7 +12,7 @@ export default class LoginPage extends Component {
     }
   }
 
-  redirect = () => {
+  handleRedirect = () => {
     this.setState({
       redirect: true
     });
@@ -25,7 +25,7 @@ export default class LoginPage extends Component {
     return (
       <div className="login-page">
         <div className="wb-logo" ></div>
-        <LoginForm redirect={this.redirect} />
+        <LoginForm onRedirect={this.handleRedirect} />
         <Link className="signup-link" to="/signup">Sign up</Link>
       </div>
     );

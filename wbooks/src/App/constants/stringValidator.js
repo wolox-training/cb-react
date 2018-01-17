@@ -1,4 +1,4 @@
-export const regex = {
+export const stringValidator = {
   matchNumber(string) {
     return /[^a-z|A-Z]/.test(string)
   },

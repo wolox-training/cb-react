@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
 import Main from './Main';
-import { Auth } from '../Auth/authentication';
+import { Auth } from '../services/auth-service';
 
 class Home extends React.Component {
   render() {
