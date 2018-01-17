@@ -60,7 +60,7 @@ export default class LoginForm extends Component {
       Auth.login(this.state.email, this.state.pass)
       .then((response) => {
         if(response.statusText === "OK") {
-          this.props.redirect();
+          this.props.onRedirect();
         } else {
           this.setState({
             loading: false,

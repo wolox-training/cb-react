@@ -15,10 +15,7 @@ export const Auth = {
       api.defaults.headers.common['Authorization'] = response.data.access_token;
       return (response)
     })
-    .catch((error) => {
-      console.log(error);
-      return error.response.data;
-    });
+    .catch((error) => error.response.data);
   },
   logout() {
     localStorage.removeItem('token');
