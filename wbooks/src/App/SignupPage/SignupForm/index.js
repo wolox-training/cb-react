@@ -124,19 +124,15 @@ export default class SignupForm extends Component {
   }
 
   validateSubmit = () => {
-    if(this.isAnyFieldEmpty() || this.invalidName()
+    return !(this.isAnyFieldEmpty() || this.invalidName()
         || this.invalidLastName() || this.invalidPass()
-        || this.invalidConfirmPass()) {
-      return false
-    }
-    return true;
+        || this.invalidConfirmPass())
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.resetErrorState();
     if(this.validateSubmit()) {
-      this.resetErrorState();
       Auth.signup(this.state.name, this.state.lastName, this.state.email,
                   this.state.pass, this.state.confirmation)
       .then((response) => {
