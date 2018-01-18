@@ -19,5 +19,22 @@ export const Auth = {
   },
   logout() {
     localStorage.removeItem('token');
+  },
+  signup(name, lastName, email, pass, confirmation) {
+    return api.post(endpoints.signup, {
+      user: {
+        email: email,
+        password: pass,
+        confirm_password: confirmation,
+        first_name: name,
+        last_name: lastName,
+        locale: 'en'
+      }
+    }).then((response) => {
+      localStorage.setItem('token',response.data.access_token);
+      return response;
+    }).catch((error) => {
+      return error.response.data;
+    })
   }
 }

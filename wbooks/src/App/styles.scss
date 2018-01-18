@@ -27,13 +27,24 @@ textarea {
   }
 }
 
+.wb-logo {
+  content: url('../assets/wbooks_logo.svg');
+  width: 300px;
+  margin: 20px 0;
+}
+
 button {
   height: 40px;
   width: 190px;
   border-style: none;
-  margin: 15px 0 0 0;
+  margin: 25px 0 15px 0;
   color: $white;
   font-size: 20px;
+  border-radius: 4px;
+
+  &:disabled {
+    background-color: grey;
+  }
 }
 
 .green-background {
@@ -73,4 +84,9 @@ button {
 
 .no-cover {
   background: $light-grey url('../assets/default_book.svg') center no-repeat;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
 }

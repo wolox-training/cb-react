@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Auth } from '../../services/auth-service';
 import './styles.css';
 
@@ -112,4 +113,8 @@ export default class LoginForm extends Component {
       </form>
     );
   }
+}
+
+LoginForm.propTypes = {
+  onRedirect: PropTypes.func
 }
