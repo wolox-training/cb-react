@@ -31,11 +31,9 @@ export const Auth = {
         locale: 'en'
       }
     }).then((response) => {
-      console.log(response);
       localStorage.setItem('token',response.data.access_token);
       return response;
     }).catch((error) => {
-      console.log(error.response);
       return error.response.data;
     })
   }
