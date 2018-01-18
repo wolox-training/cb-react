@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class NotificationControl extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toogleMenu: false,
+    }
+  }
+
+  handleClick = () => {
+    this.setState({
+      toogleMenu: !this.state.toogleMenu
+    })
+  }
+
   render() {
     return (
-      <div className="notifications control"></div>
+      <Fragment>
+        <div className="notifications control" onClick={this.handleClick} >
+          {this.state.toogleMenu && this.props.component}
+        </div>
+      </Fragment>
     );
   }
 }
