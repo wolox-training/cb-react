@@ -1,0 +1,20 @@
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 40px;
+  right: 80px;
+  min-width: 120px;
+  background-color: white;
+  box-shadow: 1px 3px 10px 0 grey;
+  z-index: 1;
+
+  .menu-item {
+    padding: 10px 5px;
+
+    &:hover {
+      background-color: rgba(0,173,238,0.25);
+      cursor: pointer;
+    }
+  }
+}
