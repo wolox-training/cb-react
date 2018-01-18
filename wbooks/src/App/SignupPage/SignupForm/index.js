@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Auth } from '../../services/auth-service';
 import { stringValidator } from '../../constants/stringValidator';
 import './styles.css';
@@ -186,4 +187,8 @@ export default class SignupForm extends Component {
       </form>
     );
   }
+}
+
+SignupForm.propTypes = {
+  onRedirect: PropTypes.func
 }
