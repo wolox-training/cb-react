@@ -1,4 +1,5 @@
 export const endpoints = {
   login: 'users/sessions/',
-  signup: 'users/'
+  signup: 'users/',
+  books: '/books'
 }
