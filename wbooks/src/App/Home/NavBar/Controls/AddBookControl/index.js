@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class AddBookControl extends Component {
   render() {
-    return <div className="add-button control" />;
+    return <div className="control add-button " />;
   }
 }

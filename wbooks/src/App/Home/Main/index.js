@@ -1,9 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import * as propTypes from '../../constants/propTypes';
+
 import Dashboard from './Dashboard';
 import BookDetail from './BookDetail';
 import Profile from './Profile';
-import * as propTypes from '../../constants/propTypes';
 import './styles.css';
 
 class Main extends React.Component {

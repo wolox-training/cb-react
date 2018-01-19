@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+
 import SignupForm from './SignupForm';
 import './styles.css';
 

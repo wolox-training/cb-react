@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import * as propTypes from '../../../constants/propTypes';
+
 import Details from './Details';
 import Recommendations from './Recommendations';
 import CommentsSection from './CommentsSection';
-import * as propTypes from '../../../constants/propTypes';
+
 import './styles.css';
 
 const books = require('../../../../books.json');

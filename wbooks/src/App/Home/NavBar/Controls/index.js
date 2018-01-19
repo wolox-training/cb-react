@@ -1,10 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import UserAvatar from '../../UserAvatar';
-import NotificationControl from './NotificationControl';
+import { Redirect, Link } from 'react-router-dom';
+
+import { Auth } from '../../../services/auth-service';
+
 import AddBookControl from './AddBookControl';
 import DropDownMenu from './DropDownMenu';
-import { Auth } from '../../../services/auth-service';
 import './styles.css';
 
 class Controls extends React.Component {
@@ -29,24 +29,24 @@ class Controls extends React.Component {
   render() {
     const notificationMenuItems = [
       {
-        component: 'not1',
+        component: <span>not1</span>,
         action: null,
         id: 1
       },
       {
-        component: 'not2',
+        component: <span>not2</span>,
         action: null,
         id: 2
       }
     ];
     const userMenuItems = [
       {
-        component: 'Perfil',
+        component: <Link to="/perfil">Perfil</Link>,
         action: null,
         id: 1
       },
       {
-        component: 'Cerrar Sesión',
+        component: <span>Cerrar Sesión</span>,
         action: this.logout,
         id: 2
       }
@@ -57,13 +57,9 @@ class Controls extends React.Component {
     }
     return (
       <div className="controls">
-        <NotificationControl>
-          <DropDownMenu items={notificationMenuItems} />
-        </NotificationControl>
+        <DropDownMenu className="control notifications" items={notificationMenuItems} />
         <AddBookControl />
-        <UserAvatar isMenu>
-          <DropDownMenu items={userMenuItems} />
-        </UserAvatar>
+        <DropDownMenu className="user-avatar" items={userMenuItems} />
       </div>
     );
   }

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+
+import { Auth } from '../services/auth-service';
+
 import NavBar from './NavBar';
 import Main from './Main';
-import { Auth } from '../services/auth-service';
 
 class Home extends React.Component {
   render() {

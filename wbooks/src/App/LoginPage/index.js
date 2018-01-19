@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import LoginForm from './LoginForm';
+
 import { Auth } from '../services/auth-service';
+
+import LoginForm from './LoginForm';
 import './styles.css';
 
 export default class LoginPage extends Component {

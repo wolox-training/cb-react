@@ -1,4 +1,5 @@
 import React from 'react';
+
 import BookCover from '../../BookCover';
 import * as propTypes from '../../../../constants/propTypes';
 import './styles.css';
