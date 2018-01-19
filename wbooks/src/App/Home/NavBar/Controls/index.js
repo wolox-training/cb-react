@@ -1,10 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import UserAvatar from '../../UserAvatar';
-import NotificationControl from './NotificationControl';
+import { Redirect, Link } from 'react-router-dom';
+
+import { Auth } from '../../../services/auth-service';
+
 import AddBookControl from './AddBookControl';
 import DropDownMenu from './DropDownMenu';
-import { Auth } from '../../../services/auth-service'
 import './styles.css';
 
 class Controls extends React.Component {
@@ -12,63 +12,57 @@ class Controls extends React.Component {
     super(props);
     this.state = {
       redirect: false
-    }
+    };
   }
 
   redirect() {
     this.setState({
       redirect: true
-    })
+    });
   }
 
   logout = () => {
-    Auth.logout()
-    this.redirect()
-  }
-
+    Auth.logout();
+    this.redirect();
+  };
 
   render() {
     const notificationMenuItems = [
       {
-        component: 'not1',
+        component: <span>not1</span>,
         action: null,
         id: 1
       },
       {
-        component: 'not2',
+        component: <span>not2</span>,
         action: null,
         id: 2
       }
     ];
     const userMenuItems = [
       {
-        component: 'Perfil',
+        component: <Link to="/perfil">Perfil</Link>,
         action: null,
         id: 1
       },
       {
-        component: 'Cerrar Sesión',
+        component: <span>Cerrar Sesión</span>,
         action: this.logout,
         id: 2
       }
     ];
 
-    if(this.state.redirect) {
-      return <Redirect to="/" />
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
     }
-    return(
+    return (
       <div className="controls">
-        <NotificationControl
-          component={<DropDownMenu items={notificationMenuItems} />}
-        />
+        <DropDownMenu className="control notifications" items={notificationMenuItems} />
         <AddBookControl />
-        <UserAvatar
-          component={<DropDownMenu items={userMenuItems} />}
-          isMenu
-         />
+        <DropDownMenu className="user-avatar" items={userMenuItems} />
       </div>
-    )
+    );
   }
 }
 
-export default Controls
+export default Controls;
