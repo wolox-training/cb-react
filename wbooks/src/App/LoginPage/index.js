@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import LoginForm from './LoginForm';
+
 import { Auth } from '../services/auth-service';
+
+import LoginForm from './LoginForm';
 import './styles.css';
 
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect : false,
-    }
+      redirect: false
+    };
   }
 
   handleRedirect = () => {
@@ -19,14 +21,16 @@ export default class LoginPage extends Component {
   };
 
   render() {
-    if(this.state.redirect || Auth.isLoggedIn()) {
-      return <Redirect to="/" />
+    if (this.state.redirect || Auth.isLoggedIn()) {
+      return <Redirect to="/" />;
     }
     return (
       <div className="login-page">
-        <div className="wb-logo" ></div>
+        <div className="wb-logo" />
         <LoginForm onRedirect={this.handleRedirect} />
-        <Link className="signup-link" to="/signup">Sign up</Link>
+        <Link className="signup-link" to="/signup">
+          Sign up
+        </Link>
       </div>
     );
   }
