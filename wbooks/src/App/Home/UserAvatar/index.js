@@ -5,23 +5,23 @@ export default class UserAvatar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toogleMenu: false,
-    }
+      toogleMenu: false
+    };
   }
 
   handleClick = () => {
-    if(this.props.isMenu){
+    if (this.props.isMenu) {
       this.setState({
         toogleMenu: !this.state.toogleMenu
-      })
+      });
     }
-  }
+  };
 
   render() {
     return (
-        <div className="user-avatar" onClick={this.handleClick}>
-          {(this.props.isMenu && this.state.toogleMenu) && this.props.children}
-        </div>
-    )
+      <div className="user-avatar" onClick={this.handleClick}>
+        {this.props.isMenu && this.state.toogleMenu && this.props.children}
+      </div>
+    );
   }
 }

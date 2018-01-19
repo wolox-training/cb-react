@@ -1,4 +1,4 @@
-import React from'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
@@ -6,27 +6,27 @@ class Filter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterSelection : '',
-      filterText : '',
-    }
+      filterSelection: '',
+      filterText: ''
+    };
   }
 
-  handleFilterTextChange = (event) => {
+  handleFilterTextChange = event => {
     this.setState({
-      filterText : event.target.value
+      filterText: event.target.value
     });
-  }
+  };
 
-  handleSelection = (event) => {
+  handleSelection = event => {
     this.setState({
-      filterSelection : event.target.value,
+      filterSelection: event.target.value
     });
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.onFilterSubmit(this.state.filterSelection, this.state.filterText);
-  }
+  };
 
   render() {
     return (
@@ -36,7 +36,9 @@ class Filter extends React.Component {
           value={this.state.filterSelection}
           onChange={this.handleSelection}
         >
-          <option value="" disabled hidden>Seleccionar filtro</option>
+          <option value="" disabled hidden>
+            Seleccionar filtro
+          </option>
           <option value="title">nombre</option>
           <option value="author">autor</option>
         </select>
@@ -47,14 +49,14 @@ class Filter extends React.Component {
           value={this.state.filtertext}
           onChange={this.handleFilterTextChange}
         />
-        <button type="submit" className="search-button"></button>
+        <button type="submit" className="search-button" />
       </form>
-    )
+    );
   }
 }
 
 Filter.propTypes = {
   onFilterSubmit: PropTypes.func
-}
+};
 
 export default Filter;

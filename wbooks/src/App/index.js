@@ -6,9 +6,7 @@ import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import './styles.css';
 
-
 class App extends Component {
-
   render() {
     return (
       <BrowserRouter>

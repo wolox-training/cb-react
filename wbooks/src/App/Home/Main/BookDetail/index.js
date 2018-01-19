@@ -12,8 +12,10 @@ class BookDetail extends React.Component {
   render() {
     return (
       <div>
-        <Link to='/' className='back-link' >Volver</Link>
-        <Details book={books.find((book) => book.id === Number(this.props.match.params.id))}/>
+        <Link to="/" className="back-link">
+          Volver
+        </Link>
+        <Details book={books.find(book => book.id === Number(this.props.match.params.id))} />
         <Recommendations books={books} />
         <CommentsSection />
       </div>

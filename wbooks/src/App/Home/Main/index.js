@@ -8,12 +8,12 @@ import './styles.css';
 
 class Main extends React.Component {
   render() {
-    return(
+    return (
       <div className="main-content">
         <Switch>
-          <Route exact path='/' render={() => <Dashboard />} />
-          <Route path='/books/:id' render={({match}) => <BookDetail match={match} />}/>
-          <Route path='/profile/:id' component={Profile} />
+          <Route exact path="/" render={() => <Dashboard />} />
+          <Route path="/books/:id" render={({ match }) => <BookDetail match={match} />} />
+          <Route path="/profile/:id" component={Profile} />
         </Switch>
       </div>
     );

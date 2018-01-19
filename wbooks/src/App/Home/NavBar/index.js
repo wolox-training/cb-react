@@ -4,14 +4,13 @@ import Controls from './Controls';
 import './styles.css';
 
 class NavBar extends React.Component {
-
   render() {
     return (
-    <header className="navBar">
-      <Link to='/' className="logo"></Link>
-      <Controls />
-    </header>
-  );
+      <header className="navBar">
+        <Link to="/" className="logo" />
+        <Controls />
+      </header>
+    );
   }
 }
 

@@ -4,7 +4,7 @@ import UserAvatar from '../../UserAvatar';
 import NotificationControl from './NotificationControl';
 import AddBookControl from './AddBookControl';
 import DropDownMenu from './DropDownMenu';
-import { Auth } from '../../../services/auth-service'
+import { Auth } from '../../../services/auth-service';
 import './styles.css';
 
 class Controls extends React.Component {
@@ -12,20 +12,19 @@ class Controls extends React.Component {
     super(props);
     this.state = {
       redirect: false
-    }
+    };
   }
 
   redirect() {
     this.setState({
       redirect: true
-    })
+    });
   }
 
   logout = () => {
-    Auth.logout()
-    this.redirect()
-  }
-
+    Auth.logout();
+    this.redirect();
+  };
 
   render() {
     const notificationMenuItems = [
@@ -53,10 +52,10 @@ class Controls extends React.Component {
       }
     ];
 
-    if(this.state.redirect) {
-      return <Redirect to="/" />
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
     }
-    return(
+    return (
       <div className="controls">
         <NotificationControl>
           <DropDownMenu items={notificationMenuItems} />
@@ -66,8 +65,8 @@ class Controls extends React.Component {
           <DropDownMenu items={userMenuItems} />
         </UserAvatar>
       </div>
-    )
+    );
   }
 }
 
-export default Controls
+export default Controls;

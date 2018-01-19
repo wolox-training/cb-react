@@ -6,29 +6,25 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterSelection : '',
-      filterText : '',
+      filterSelection: '',
+      filterText: ''
     };
   }
 
   handleFilterSubmit = (filterSelection, filterText) => {
     this.setState({
-      filterSelection : filterSelection,
-      filterText : filterText,
+      filterSelection,
+      filterText
     });
-  }
+  };
 
   render() {
     return (
       <div>
-        <Filter
-          onFilterSubmit={this.handleFilterSubmit}
-        />
-        <BooksList
-          filterSelection={this.state.filterSelection}
-          filterText={this.state.filterText} />
+        <Filter onFilterSubmit={this.handleFilterSubmit} />
+        <BooksList filterSelection={this.state.filterSelection} filterText={this.state.filterText} />
       </div>
-    )
+    );
   }
 }
 
