@@ -58,14 +58,13 @@ class Controls extends React.Component {
     }
     return(
       <div className="controls">
-        <NotificationControl
-          component={<DropDownMenu items={notificationMenuItems} />}
-        />
+        <NotificationControl>
+          <DropDownMenu items={notificationMenuItems} />
+        </NotificationControl>
         <AddBookControl />
-        <UserAvatar
-          component={<DropDownMenu items={userMenuItems} />}
-          isMenu
-         />
+        <UserAvatar isMenu>
+          <DropDownMenu items={userMenuItems} />
+        </UserAvatar>
       </div>
     )
   }

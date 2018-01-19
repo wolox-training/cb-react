@@ -6,7 +6,6 @@ export default class UserAvatar extends Component {
     super(props);
     this.state = {
       toogleMenu: false,
-      redirect: false
     }
   }
 
@@ -15,18 +14,13 @@ export default class UserAvatar extends Component {
       this.setState({
         toogleMenu: !this.state.toogleMenu
       })
-    } else if (this.props.isRedirect) {
-      this.setState({
-        redirect: !this.state.redirect
-      })
     }
   }
 
   render() {
     return (
         <div className="user-avatar" onClick={this.handleClick}>
-          {(this.props.isMenu && this.state.toogleMenu) && this.props.component}
-          {(this.props.isRedirect && this.state.redirect) && this.props.component}
+          {(this.props.isMenu && this.state.toogleMenu) && this.props.children}
         </div>
     )
   }

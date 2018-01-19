@@ -18,7 +18,7 @@ export default class NotificationControl extends Component {
     return (
       <Fragment>
         <div className="notifications control" onClick={this.handleClick} >
-          {this.state.toogleMenu && this.props.component}
+          {this.state.toogleMenu && this.props.children}
         </div>
       </Fragment>
     );
