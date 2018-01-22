@@ -11,16 +11,11 @@ const Auth = {
         email: user,
         password: pass
       })
-      .then(
-        response => {
-          localStorage.setItem('token', response.data.access_token);
-          api.defaults.headers.common.Authorization = response.data.access_token;
-          return response;
-        },
-        error => {
-          throw error;
-        }
-      );
+      .then(response => {
+        localStorage.setItem('token', response.data.access_token);
+        api.defaults.headers.common.Authorization = response.data.access_token;
+        return response;
+      });
   },
   logout() {
     localStorage.removeItem('token');
@@ -37,16 +32,11 @@ const Auth = {
           locale: 'en'
         }
       })
-      .then(
-        response => {
-          localStorage.setItem('token', response.data.access_token);
-          api.defaults.headers.common.Authorization = response.data.access_token;
-          return response;
-        },
-        error => {
-          throw error;
-        }
-      );
+      .then(response => {
+        localStorage.setItem('token', response.data.access_token);
+        api.defaults.headers.common.Authorization = response.data.access_token;
+        return response;
+      });
   }
 };
 
