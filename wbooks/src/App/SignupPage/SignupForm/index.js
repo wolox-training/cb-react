@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Auth } from '../../services/auth-service';
-import { stringValidator } from '../../constants/stringValidator';
+import Auth from '../../services/auth-service';
+import stringValidator from '../../constants/stringValidator';
 import './styles.css';
 
 export default class SignupForm extends Component {
@@ -149,16 +149,16 @@ export default class SignupForm extends Component {
         this.state.email,
         this.state.pass,
         this.state.confirmation
-      ).then(response => {
-        if (response.status === 201) {
+      )
+        .then(() => {
           this.props.onRedirect();
-        } else {
+        })
+        .catch(error => {
           this.setState({
             error: true,
-            errorMsg: response.error
+            errorMsg: error.response.data.error
           });
-        }
-      });
+        });
     }
   };
 

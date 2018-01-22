@@ -15,19 +15,31 @@ class BookDetail extends React.Component {
     super(props);
     this.state = {
       loading: true,
+      error: false,
       book: {}
     };
   }
   componentDidMount() {
-    BookService.getBook(this.props.match.params.id).then(book => {
-      this.setState({
-        loading: false,
-        book
-      });
-    });
+    BookService.getBook(this.props.match.params.id).then(
+      book => {
+        this.setState({
+          loading: false,
+          book
+        });
+      },
+      () => {
+        this.setState({
+          loading: false,
+          error: true
+        });
+      }
+    );
   }
 
   render() {
+    if (this.state.error) {
+      return <span>ERROR</span>;
+    }
     if (this.state.loading) {
       return <span>Cargando...</span>;
     }

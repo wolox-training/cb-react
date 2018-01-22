@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-export const api = axios.create({
-  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1',
-  headers: { Authorization: localStorage.getItem('token') }
+const instance = axios.create({
+  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1'
 });
+
+instance.defaults.headers.common.Authorization = localStorage.getItem('token');
+
+export default instance;

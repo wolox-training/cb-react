@@ -9,19 +9,31 @@ import './styles.css';
 class BookList extends React.Component {
   state = {
     loading: true,
+    error: false,
     books: []
   };
 
   componentDidMount() {
-    BookService.getBooks().then(books => {
-      this.setState({
-        loading: false,
-        books
-      });
-    });
+    BookService.getBooks().then(
+      books => {
+        this.setState({
+          loading: false,
+          books
+        });
+      },
+      () => {
+        this.setState({
+          loading: false,
+          error: true
+        });
+      }
+    );
   }
 
   render() {
+    if (this.state.error) {
+      return <span>ERROR</span>;
+    }
     let selectedBooks = this.state.books;
     if (this.props.filterSelection !== '' && this.props.filterText !== '') {
       selectedBooks = selectedBooks.filter(book =>
