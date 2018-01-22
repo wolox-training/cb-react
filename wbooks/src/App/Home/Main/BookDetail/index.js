@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as propTypes from '../../../constants/propTypes';
-import { Request } from '../../../services/books-service';
+import { booksPropTypes } from '../../../constants/propTypes';
+import BookService from '../../../services/books-service';
 
 import Details from './Details';
 import Recommendations from './Recommendations';
@@ -19,7 +19,7 @@ class BookDetail extends React.Component {
     };
   }
   componentDidMount() {
-    Request.getBook(this.props.match.params.id).then(book => {
+    BookService.getBook(this.props.match.params.id).then(book => {
       this.setState({
         loading: false,
         book
@@ -44,6 +44,6 @@ class BookDetail extends React.Component {
   }
 }
 
-BookDetail.propTypes = propTypes.booksPropTypes;
+BookDetail.propTypes = booksPropTypes;
 
 export default BookDetail;

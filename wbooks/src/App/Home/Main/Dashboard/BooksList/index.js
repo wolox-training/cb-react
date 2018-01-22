@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { Request } from '../../../../services/books-service';
+import BookService from '../../../../services/books-service';
 import BookCover from '../../BookCover';
 import './styles.css';
 
@@ -13,7 +13,7 @@ class BookList extends React.Component {
   };
 
   componentDidMount() {
-    Request.getBooks().then(books => {
+    BookService.getBooks().then(books => {
       this.setState({
         loading: false,
         books
