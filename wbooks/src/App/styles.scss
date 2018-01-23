@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import '../variables/_colors';
+@import './variables/_colors';
 
 h1,
 h2,
@@ -28,7 +28,7 @@ textarea {
 }
 
 .wb-logo {
-  content: url('../assets/wbooks_logo.svg');
+  content: url('./assets/wbooks_logo.svg');
   width: 300px;
   margin: 20px 0;
 }
@@ -83,7 +83,7 @@ button {
 }
 
 .no-cover {
-  background: $light-grey url('../assets/default_book.svg') center no-repeat;
+  background: $light-grey url('./assets/default_book.svg') center no-repeat;
 }
 
 .error-msg {
