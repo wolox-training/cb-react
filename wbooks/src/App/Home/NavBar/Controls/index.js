@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
-import { Auth } from '../../../services/auth-service';
+import Auth from '../../../services/auth-service';
 
 import AddBookControl from './AddBookControl';
 import DropDownMenu from './DropDownMenu';

@@ -1,4 +1,4 @@
-export const stringValidator = {
+export default {
   matchNumber(string) {
     return /[^a-z|A-Z]/.test(string);
   },

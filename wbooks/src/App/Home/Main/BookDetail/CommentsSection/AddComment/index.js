@@ -9,8 +9,10 @@ class AddComment extends React.Component {
       <div className="comment-area">
         <Link to="/profile" className="user-avatar" />
         <form className="comment-element">
-          <legend className="section-subtitle">Agregar comentario</legend>
-          <textarea />
+          <label className="section-subtitle" htmlFor="comment-body">
+            Agregar comentario
+          </label>
+          <textarea id="comment-body" />
           <button className="green-background">Enviar</button>
         </form>
       </div>

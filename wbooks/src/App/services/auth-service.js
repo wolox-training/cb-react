@@ -1,7 +1,7 @@
-import { api } from '../config/api';
-import { endpoints } from '../constants/endpoints';
+import api from '../config/api';
+import endpoints from '../constants/endpoints';
 
-export const Auth = {
+const Auth = {
   isLoggedIn() {
     return localStorage.getItem('token') !== null;
   },
@@ -15,8 +15,7 @@ export const Auth = {
         localStorage.setItem('token', response.data.access_token);
         api.defaults.headers.common.Authorization = response.data.access_token;
         return response;
-      })
-      .catch(error => error.response.data);
+      });
   },
   logout() {
     localStorage.removeItem('token');
@@ -35,8 +34,10 @@ export const Auth = {
       })
       .then(response => {
         localStorage.setItem('token', response.data.access_token);
+        api.defaults.headers.common.Authorization = response.data.access_token;
         return response;
-      })
-      .catch(error => error.response.data);
+      });
   }
 };
+
+export default Auth;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as propTypes from '../../../constants/propTypes';
+import { booksPropTypes } from '../../../constants/propTypes';
+import BookService from '../../../services/books-service';
 
 import Details from './Details';
 import Recommendations from './Recommendations';
@@ -9,23 +10,52 @@ import CommentsSection from './CommentsSection';
 
 import './styles.css';
 
-const books = require('../../../../books.json');
-
 class BookDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      error: false,
+      book: {}
+    };
+  }
+  componentDidMount() {
+    BookService.getBook(this.props.match.params.id).then(
+      book => {
+        this.setState({
+          loading: false,
+          book
+        });
+      },
+      () => {
+        this.setState({
+          loading: false,
+          error: true
+        });
+      }
+    );
+  }
+
   render() {
+    if (this.state.error) {
+      return <span>ERROR</span>;
+    }
+    if (this.state.loading) {
+      return <span>Cargando...</span>;
+    }
     return (
       <div>
         <Link to="/" className="back-link">
           Volver
         </Link>
-        <Details book={books.find(book => book.id === Number(this.props.match.params.id))} />
-        <Recommendations books={books} />
+        <Details book={this.state.book} />
+        <Recommendations />
         <CommentsSection />
       </div>
     );
   }
 }
 
-BookDetail.propTypes = propTypes.booksPropTypes;
+BookDetail.propTypes = booksPropTypes;
 
 export default BookDetail;

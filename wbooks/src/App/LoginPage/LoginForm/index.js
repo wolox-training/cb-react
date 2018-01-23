@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Auth } from '../../services/auth-service';
+import Auth from '../../services/auth-service';
 import './styles.css';
 
 export default class LoginForm extends Component {
@@ -58,17 +58,15 @@ export default class LoginForm extends Component {
       error: false
     });
     if (this.validateSubmit()) {
-      Auth.login(this.state.email, this.state.pass).then(response => {
-        if (response.statusText === 'OK') {
-          this.props.onRedirect();
-        } else {
-          this.setState({
+      Auth.login(this.state.email, this.state.pass).then(
+        () => this.props.onRedirect(),
+        error =>
+          this.setStae({
             loading: false,
             error: true,
-            errorMsg: response.error
-          });
-        }
-      });
+            errorMsg: error.response.data.error
+          })
+      );
     }
   };
 
