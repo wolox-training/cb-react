@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { PrivateRoute } from './PrivateRoute';
-import Home from './Home';
-import LoginPage from './LoginPage';
-import SignupPage from './SignupPage';
+import PrivateRoute from './components/PrivateRoute';
+import Home from './screens/Home';
+import LoginPage from './screens/LoginPage';
+import SignupPage from './screens/SignupPage';
 import './styles.css';
 
 class App extends Component {
