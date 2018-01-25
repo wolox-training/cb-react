@@ -15,12 +15,6 @@ export default class BookList extends React.Component {
     if (this.props.error) {
       return <span>ERROR</span>;
     }
-    // let selectedBooks = this.props.books;
-    // if (this.props.filterSelection !== '' && this.props.filterText !== '') {
-    //   selectedBooks = selectedBooks.filter(book =>
-    //     book[this.props.filterSelection].toLowerCase().includes(this.props.filterText.toLowerCase())
-    //   );
-    // }
     if (this.props.isLoading) {
       return <span>cargando...</span>;
     }
@@ -39,8 +33,6 @@ export default class BookList extends React.Component {
 }
 
 BookList.propTypes = {
-  // filterSelection: PropTypes.string,
-  // filterText: PropTypes.string,
   onLoadBooks: PropTypes.func,
   books: PropTypes.arrayOf(PropTypes.object),
   isLoading: PropTypes.bool,
