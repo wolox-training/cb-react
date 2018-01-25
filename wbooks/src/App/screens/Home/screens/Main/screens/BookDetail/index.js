@@ -1,61 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { booksPropTypes } from '../../../../../../constants/propTypes';
-import BookService from '../../../../../../services/books-service';
+import BooksService from '../../../../../../services/books-service';
+import RentsService from '../../../../../../services/rents-service';
+import { getRents, getBook, isLoading, error } from '../../../../../../redux/Book/actions';
 
-import Details from './components/Details';
-import Recommendations from './components/Recommendations';
-import CommentsSection from './components/CommentsSection';
+import Layout from './layout';
 
-import './styles.css';
+const mapStateToProps = state => ({
+  book: state.book.info,
+  rents: state.book.rents,
+  isLoading: state.book.isLoading,
+  error: state.book.error
+});
 
-class BookDetail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      error: false,
-      book: {}
-    };
-  }
-  componentDidMount() {
-    BookService.getBook(this.props.match.params.id).then(
-      book => {
-        this.setState({
-          loading: false,
-          book
-        });
+const mapDispatchToProps = dispatch => ({
+  onMount: id => {
+    dispatch(isLoading());
+    BooksService.getBook(id).then(
+      info => {
+        dispatch(getBook(info));
       },
       () => {
-        this.setState({
-          loading: false,
-          error: true
-        });
+        dispatch(error());
+      }
+    );
+    RentsService.getRents(id).then(
+      rents => {
+        dispatch(getRents(rents));
+      },
+      () => {
+        dispatch(error());
       }
     );
   }
+});
 
-  render() {
-    if (this.state.error) {
-      return <span>ERROR</span>;
-    }
-    if (this.state.loading) {
-      return <span>Cargando...</span>;
-    }
-    return (
-      <div>
-        <Link to="/" className="back-link">
-          Volver
-        </Link>
-        <Details book={this.state.book} />
-        <Recommendations />
-        <CommentsSection />
-      </div>
-    );
-  }
-}
-
-BookDetail.propTypes = booksPropTypes;
-
-export default BookDetail;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -19,7 +19,7 @@ class Details extends React.Component {
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </p>
-          <button className="blue-background">Aplicar</button>
+          <button className="blue-background">Alquilar</button>
         </div>
       </div>
     );
