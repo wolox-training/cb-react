@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <Filter onFilterSubmit={this.handleFilterSubmit} />
-        <BooksList filterSelection={this.state.filterSelection} filterText={this.state.filterText} />
+        <BooksList />
       </div>
     );
   }
