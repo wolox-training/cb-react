@@ -1,68 +1,18 @@
-import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import Auth from '../../../../../../services/auth-service';
+import { logout } from '../../../../../../redux/Auth/actions';
 
-import AddBookControl from './components/AddBookControl';
-import DropDownMenu from './components/DropDownMenu';
-import './styles.css';
+import Layout from './layout';
 
-class Controls extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false
-    };
+const mapStateToProps = state => ({
+  isLoggedIn: state.auth.isLoggedIn
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => {
+    localStorage.removeItem('token');
+    dispatch(logout());
   }
+});
 
-  redirect() {
-    this.setState({
-      redirect: true
-    });
-  }
-
-  logout = () => {
-    Auth.logout();
-    this.redirect();
-  };
-
-  render() {
-    const notificationMenuItems = [
-      {
-        component: <span>not1</span>,
-        action: null,
-        id: 1
-      },
-      {
-        component: <span>not2</span>,
-        action: null,
-        id: 2
-      }
-    ];
-    const userMenuItems = [
-      {
-        component: <Link to="/perfil">Perfil</Link>,
-        action: null,
-        id: 1
-      },
-      {
-        component: <span>Cerrar Sesión</span>,
-        action: this.logout,
-        id: 2
-      }
-    ];
-
-    if (this.state.redirect) {
-      return <Redirect to="/" />;
-    }
-    return (
-      <div className="controls">
-        <DropDownMenu className="control notifications" items={notificationMenuItems} />
-        <AddBookControl />
-        <DropDownMenu className="user-avatar" items={userMenuItems} />
-      </div>
-    );
-  }
-}
-
-export default Controls;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -3,5 +3,6 @@ export default {
   signup: 'users/',
   books: '/books',
   rents: '/books/id/rents',
-  wishList: '/users/id/wishes'
+  wishList: '/users/id/wishes',
+  userInfo: '/users/me'
 };

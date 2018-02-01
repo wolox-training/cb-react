@@ -1,26 +1,40 @@
-const book = (state = { info: {}, rents: [], isLoading: true, error: false }, action) => {
+import { book as initialState } from '../../constants/initialStates';
+
+const book = (state = initialState, action) => {
   switch (action.type) {
     case 'ISLOADING':
       return {
         ...state,
         isLoading: true
       };
-    case 'GET_BOOK':
+    case 'ADD_BOOK':
       return {
         ...state,
-        info: action.info,
-        isLoading: false
-      };
-    case 'GET_RENTS':
-      return {
-        ...state,
-        rents: action.rents,
+        info: action.payload,
         isLoading: false
       };
     case 'BOOK_ERROR':
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
+        isLoading: false
+      };
+    case 'ADD_RENTS':
+      return {
+        ...state,
+        rents: action.payload,
+        isLoading: false
+      };
+    case 'IS_AVAILABLE':
+      return {
+        ...state,
+        isAvailable: action.payload,
+        isLoading: false
+      };
+    case 'FINISHED_FETCHING_RENTS':
+      return {
+        ...state,
+        isFetchingRents: false,
         isLoading: false
       };
     default:
