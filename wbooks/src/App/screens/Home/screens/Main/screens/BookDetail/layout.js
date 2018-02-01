@@ -26,7 +26,7 @@ class BookDetail extends React.Component {
         <Link to="/" className="back-link">
           Volver
         </Link>
-        <Details book={this.props.book} />
+        <Details />
         <Recommendations />
         <CommentsSection />
       </div>

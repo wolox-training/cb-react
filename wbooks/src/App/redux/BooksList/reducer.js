@@ -1,4 +1,6 @@
-const booksList = (state = { books: [], isLoading: true, error: false }, action) => {
+import { bookList as initialState } from '../../constants/initialStates';
+
+const booksList = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_BOOKS':
       return {

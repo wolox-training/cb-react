@@ -14,6 +14,12 @@
     width: 250px;
   }
 
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .error-msg {
     color: red;
     font-size: 12px;

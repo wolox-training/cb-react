@@ -1,4 +1,6 @@
-const filter = (state = { selection: '', text: '' }, action) => {
+import { filter as initialState } from '../../constants/initialStates';
+
+const filter = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_FILTER':
       return {
