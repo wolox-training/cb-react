@@ -1,23 +1,21 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import Auth from '../../services/auth-service';
+import { authOk } from '../../redux/Auth/actions';
+import { getId } from '../../redux/User/actions';
 
-import NavBar from './components/NavBar';
-import Main from './screens/Main';
+import Layout from './layout';
 
-class Home extends React.Component {
-  render() {
-    if (!Auth.isLoggedIn()) {
-      return <Redirect to="/login" />;
+const mapStateToProps = state => ({
+  isLoggedIn: state.auth.isLoggedIn
+});
+
+const mapDispatchToProps = dispatch => ({
+  onMount: () => {
+    if (localStorage.getItem('token')) {
+      dispatch(authOk());
+      dispatch(getId());
     }
-    return (
-      <div>
-        <NavBar />
-        <Main />
-      </div>
-    );
   }
-}
+});
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -1,22 +1,24 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import AddComment from './components/AddComment';
-import Comment from './components/Comment';
-import './styles.css';
+import { getComments } from '../../../../../../../../redux/Comments/actions';
 
-class CommentsSection extends React.Component {
-  render() {
-    const comments = require('./comments.json').map(comment => (
-      <Comment key={comment.user} user={comment.user} date={comment.date} message={comment.message} />
-    ));
-    return (
-      <div className="section">
-        <h2 className="section-title">Comentarios</h2>
-        <AddComment />
-        {comments}
-      </div>
-    );
+import Layout from './layout';
+
+const getLastFourComments = comments =>
+  comments
+    .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+    .reverse()
+    .slice(0, 4);
+
+const mapStateToProps = state => ({
+  comments: getLastFourComments(state.comments.commentsList),
+  bookId: state.book.info.id
+});
+
+const mapDispatchToProps = dispatch => ({
+  getBookComments: id => {
+    dispatch(getComments(id));
   }
-}
+});
 
-export default CommentsSection;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

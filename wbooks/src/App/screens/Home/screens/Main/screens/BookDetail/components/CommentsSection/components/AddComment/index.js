@@ -1,23 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import './styles.css';
+import { postComment } from '../../../../../../../../../../redux/Comments/actions';
 
-class AddComment extends React.Component {
+import Layout from './layout';
+
+class AddCommentForm extends Component {
+  handleSubmit = comment => {
+    this.props.onSubmit(this.props.bookId, this.props.userId, comment['comment-body']);
+  };
   render() {
     return (
       <div className="comment-area">
         <Link to="/profile" className="user-avatar" />
-        <form className="comment-element">
-          <label className="section-subtitle" htmlFor="comment-body">
-            Agregar comentario
-          </label>
-          <textarea id="comment-body" />
-          <button className="green-background">Enviar</button>
-        </form>
+        <Layout onSubmit={this.handleSubmit} />
       </div>
     );
   }
 }
 
-export default AddComment;
+AddCommentForm.propTypes = {
+  onSubmit: PropTypes.func,
+  bookId: PropTypes.number,
+  userId: PropTypes.number
+};
+
+const mapStateToProps = state => ({
+  bookId: state.book.info.id,
+  userId: state.user.id
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (book, user, comment) => dispatch(postComment(book, user, comment))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCommentForm);

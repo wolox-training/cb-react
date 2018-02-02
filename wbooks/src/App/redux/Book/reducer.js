@@ -1,0 +1,37 @@
+import { book as initialState } from '../../constants/initialStates';
+
+const book = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_IS_LOADING_INFO':
+      return {
+        ...state,
+        isLoading: true
+      };
+    case 'ADD_BOOK':
+      return {
+        ...state,
+        info: action.payload,
+        isLoading: false
+      };
+    case 'BOOK_ERROR':
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+    case 'ADD_RENTS':
+      return {
+        ...state,
+        rents: action.payload
+      };
+    case 'FINISHED_FETCHING':
+      return {
+        ...state,
+        isFetching: false
+      };
+    default:
+      return state;
+  }
+};
+
+export default book;
