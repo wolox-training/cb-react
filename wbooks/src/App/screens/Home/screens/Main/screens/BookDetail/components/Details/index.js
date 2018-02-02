@@ -1,12 +1,7 @@
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import {
-  getRentsAndWishlist,
-  wishBook,
-  finishedFetchingRents,
-  isLoading
-} from '../../../../../../../../redux/Book/actions';
+import { getRentsAndWishlist, wishBook } from '../../../../../../../../redux/Book/actions';
 
 import Layout from './layout';
 
@@ -27,15 +22,13 @@ const mapStateToProps = state => ({
   rents: state.book.rents,
   isAvailable: !isRented(state.book.rents),
   isWished: isAlreadyWished(state.user.wishlist, state.book.info.id),
-  isFetchingRents: state.book.isFetchingRents,
+  isFetching: state.book.isFetching,
   userId: state.user.id
 });
 
 const mapDispatchToProps = dispatch => ({
   onMount: (bookId, userId) => {
-    dispatch(isLoading());
     dispatch(getRentsAndWishlist(bookId, userId));
-    dispatch(finishedFetchingRents());
   },
   wishBook: (bookId, userId) => {
     dispatch(wishBook(bookId, userId));
