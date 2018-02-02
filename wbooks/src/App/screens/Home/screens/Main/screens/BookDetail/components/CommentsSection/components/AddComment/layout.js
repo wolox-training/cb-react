@@ -14,7 +14,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 );
 
 renderField.propTypes = {
-  input: PropTypes.object,
+  input: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   label: PropTypes.string,
   type: PropTypes.string,
   meta: PropTypes.shape({
