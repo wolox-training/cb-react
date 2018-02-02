@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { bookFetch, isLoading } from '../../../../../../redux/Book/actions';
+import { bookFetch } from '../../../../../../redux/Book/actions';
 
 import Layout from './layout';
 
@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onMount: id => {
-    dispatch(isLoading());
     dispatch(bookFetch(id));
   }
 });

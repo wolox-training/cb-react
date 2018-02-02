@@ -2,7 +2,7 @@ import { book as initialState } from '../../constants/initialStates';
 
 const book = (state = initialState, action) => {
   switch (action.type) {
-    case 'ISLOADING':
+    case 'SET_IS_LOADING_INFO':
       return {
         ...state,
         isLoading: true
@@ -22,20 +22,12 @@ const book = (state = initialState, action) => {
     case 'ADD_RENTS':
       return {
         ...state,
-        rents: action.payload,
-        isLoading: false
+        rents: action.payload
       };
-    case 'IS_AVAILABLE':
+    case 'FINISHED_FETCHING':
       return {
         ...state,
-        isAvailable: action.payload,
-        isLoading: false
-      };
-    case 'FINISHED_FETCHING_RENTS':
-      return {
-        ...state,
-        isFetchingRents: false,
-        isLoading: false
+        isFetching: false
       };
     default:
       return state;

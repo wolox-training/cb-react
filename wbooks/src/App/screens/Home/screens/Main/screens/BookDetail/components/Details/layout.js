@@ -30,15 +30,17 @@ class Details extends React.Component {
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </p>
-          {this.props.isAvailable ? (
+          {this.props.isFetching ? (
+            <span>loading...</span>
+          ) : this.props.isAvailable ? (
             <button className="blue-background">Alquilar</button>
-          ) : this.props.isWished || this.props.isFetchingRents ? (
-            <button className="blue-background" disabled>
-              Alquilar
-            </button>
-          ) : (
+          ) : !this.props.isWished ? (
             <button className="green-background" onClick={this.wishBook}>
               Wishlist
+            </button>
+          ) : (
+            <button className="blue-background" disabled>
+              Alquilar
             </button>
           )}
         </div>
