@@ -1,9 +1,22 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-class Profile extends React.Component {
-  render() {
-    return <span>A profile should be rendered here</span>;
+import { getInfoRentsWishListAndComments } from '../../../../../../redux/User/actions';
+
+import Layout from './layout';
+
+const mapStateToProps = state => ({
+  id: state.user.id,
+  info: state.user.info,
+  wishlist: state.user.wishlist,
+  rents: state.user.rents,
+  comments: state.user.comments,
+  isLoading: state.user.isLoading
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleMount: id => {
+    dispatch(getInfoRentsWishListAndComments(id));
   }
-}
+});
 
-export default Profile;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

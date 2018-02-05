@@ -5,6 +5,7 @@ import { logout } from '../../../../../../redux/Auth/actions';
 import Layout from './layout';
 
 const mapStateToProps = state => ({
+  userId: state.user.id,
   isLoggedIn: state.auth.isLoggedIn
 });
 

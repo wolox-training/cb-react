@@ -42,7 +42,7 @@ class Controls extends React.Component {
     ];
     const userMenuItems = [
       {
-        component: <Link to="/perfil">Perfil</Link>,
+        component: <Link to={`/profile/${this.props.userId}`}>Perfil</Link>,
         action: null,
         id: 1
       },
@@ -67,6 +67,7 @@ class Controls extends React.Component {
 }
 
 Controls.propTypes = {
+  userId: PropTypes.number,
   logout: PropTypes.func,
   isLoggedIn: PropTypes.bool
 };

@@ -1,4 +1,4 @@
-import { filter as initialState } from '../../constants/initialStates';
+const initialState = { selection: '', text: '' };
 
 const filter = (state = initialState, action) => {
   switch (action.type) {

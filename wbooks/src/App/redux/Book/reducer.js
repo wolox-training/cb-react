@@ -1,4 +1,12 @@
-import { book as initialState } from '../../constants/initialStates';
+const initialState = {
+  info: {},
+  rents: [],
+  isLoading: true,
+  isAvailable: false,
+  isWished: false,
+  error: false,
+  isFetching: true
+};
 
 const book = (state = initialState, action) => {
   switch (action.type) {

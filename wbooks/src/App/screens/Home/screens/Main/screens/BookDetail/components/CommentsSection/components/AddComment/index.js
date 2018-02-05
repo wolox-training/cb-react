@@ -14,7 +14,7 @@ class AddCommentForm extends Component {
   render() {
     return (
       <div className="comment-area">
-        <Link to="/profile" className="user-avatar" />
+        <Link to={`/profile/${this.props.userId}`} className="user-avatar" />
         <Layout onSubmit={this.handleSubmit} />
       </div>
     );

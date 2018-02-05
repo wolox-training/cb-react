@@ -1,5 +1,9 @@
 import api from '../config/api';
-import endpoints from '../constants/endpoints';
+
+const endpoints = {
+  login: 'users/sessions/',
+  signup: 'users/'
+};
 
 const Auth = {
   isLoggedIn() {

@@ -1,4 +1,4 @@
-import { auth as initialState } from '../../constants/initialStates';
+const initialState = { isLoggedIn: false, errorMsg: '' };
 
 const auth = (state = initialState, action) => {
   switch (action.type) {

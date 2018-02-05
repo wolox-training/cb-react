@@ -1,4 +1,4 @@
-import { comments as initialState } from '../../constants/initialStates';
+const initialState = { commentsList: [] };
 
 const comments = (state = initialState, action) => {
   switch (action.type) {

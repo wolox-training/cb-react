@@ -1,5 +1,8 @@
 import api from '../config/api';
-import endpoints from '../constants/endpoints';
+
+const endpoints = {
+  books: '/books'
+};
 
 export default {
   getBooks() {

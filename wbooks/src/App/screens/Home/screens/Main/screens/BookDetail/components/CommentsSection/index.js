@@ -11,6 +11,7 @@ const getLastFourComments = comments =>
     .slice(0, 4);
 
 const mapStateToProps = state => ({
+  userId: state.user.id,
   comments: getLastFourComments(state.comments.commentsList),
   bookId: state.book.info.id
 });

@@ -17,7 +17,8 @@ class CommentsSection extends React.Component {
         {this.props.comments.map(comment => (
           <Comment
             key={comment.id}
-            user={comment.user.first_name}
+            userName={comment.user.first_name}
+            userId={comment.user.id}
             date={new Date(comment.created_at).toLocaleDateString('es-AR')}
             message={comment.content}
           />

@@ -1,5 +1,9 @@
 import api from '../config/api';
-import endpoints from '../constants/endpoints';
+
+const endpoints = {
+  rents: '/books/id/rents',
+  wishList: '/users/id/wishes'
+};
 
 export default {
   getRents(id) {
