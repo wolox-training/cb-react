@@ -2,10 +2,10 @@ import api from '../config/api';
 
 const endpoints = {
   userInfo: '/users/me',
-  comments: '/books/id/comments',
-  userRents: '/users/id/rents',
-  wishList: '/users/id/wishes',
-  userComments: '/users/id/comments'
+  comments: id => `/books/${id}/comments`,
+  userRents: id => `/users/${id}/rents`,
+  wishList: id => `/users/${id}/wishes`,
+  userComments: id => `/users/${id}/comments`
 };
 
 export default {

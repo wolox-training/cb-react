@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -14,10 +14,10 @@ class Home extends React.Component {
       return <Redirect to="/login" />;
     }
     return (
-      <div>
+      <Fragment>
         <NavBar />
         <Main />
-      </div>
+      </Fragment>
     );
   }
 }

@@ -9,19 +9,6 @@ import DropDownMenu from './components/DropDownMenu';
 import './styles.css';
 
 class Controls extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false
-    };
-  }
-
-  redirect() {
-    this.setState({
-      redirect: true
-    });
-  }
-
   logout = () => {
     Auth.logout();
     this.redirect();
