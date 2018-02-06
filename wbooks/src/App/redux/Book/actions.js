@@ -1,13 +1,17 @@
 import BooksService from '../../services/books-service';
 import RentsService from '../../services/rents-service';
 
-export const setBookInfoLoading = () => ({ type: 'SET_BOOK_INFO_LOADING' });
-export const setFetchingWishlist = () => ({ type: 'SET_IS_FETCHING_WISHLIST' });
-export const error = () => ({ type: 'BOOK_ERROR' });
-export const addBook = info => ({ type: 'ADD_BOOK', payload: info });
-export const addRents = rents => ({ type: 'ADD_RENTS', payload: rents });
-export const addWishlist = wishlist => ({ type: 'ADD_WISHLIST', payload: wishlist });
-export const finishedFetching = () => ({ type: 'FINISHED_FETCHING' });
+export const BOOK_ERROR = 'BOOK@@ BOOK_ERROR';
+export const ADD_BOOK = 'BOOK@@ ADD_BOOK';
+export const ADD_RENTS = 'BOOK@@ ADD_RENTS';
+export const ADD_WISHLIST = 'USER@@ ADD_WISHLIST';
+export const FINISHED_FETCHING = 'BOOK@@ FINISHED_FETCHING';
+
+export const error = () => ({ type: BOOK_ERROR });
+export const addBook = info => ({ type: ADD_BOOK, payload: info });
+export const addRents = rents => ({ type: ADD_RENTS, payload: rents });
+export const addWishlist = wishlist => ({ type: ADD_WISHLIST, payload: wishlist });
+export const finishedFetching = () => ({ type: FINISHED_FETCHING });
 export function bookFetch(id) {
   return dispatch => {
     BooksService.getBook(id).then(

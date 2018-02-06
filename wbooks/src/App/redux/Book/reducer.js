@@ -1,3 +1,5 @@
+import { ADD_BOOK, BOOK_ERROR, ADD_RENTS, FINISHED_FETCHING } from './actions';
+
 const initialState = {
   info: {},
   rents: [],
@@ -10,29 +12,24 @@ const initialState = {
 
 const book = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_IS_LOADING_INFO':
-      return {
-        ...state,
-        isLoading: true
-      };
-    case 'ADD_BOOK':
+    case ADD_BOOK:
       return {
         ...state,
         info: action.payload,
         isLoading: false
       };
-    case 'BOOK_ERROR':
+    case BOOK_ERROR:
       return {
         ...state,
         error: action.payload,
         isLoading: false
       };
-    case 'ADD_RENTS':
+    case ADD_RENTS:
       return {
         ...state,
         rents: action.payload
       };
-    case 'FINISHED_FETCHING':
+    case FINISHED_FETCHING:
       return {
         ...state,
         isFetching: false

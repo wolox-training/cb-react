@@ -1,6 +1,8 @@
 import CommentsService from '../../services/comments-service';
 
-export const addComments = comments => ({ type: 'ADD_COMMENTS', payload: comments });
+export const ADD_COMMENTS = 'COMMENTS@@ ADD_COMMENTS';
+
+export const addComments = comments => ({ type: ADD_COMMENTS, payload: comments });
 export function getComments(bookId) {
   return dispatch =>
     CommentsService.getComments(bookId).then(comments => {
