@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -13,6 +14,11 @@ class Comment extends React.Component {
           <h3 className="comment-date">{this.props.date}</h3>
           <p className="comment">{this.props.message}</p>
         </div>
+        {this.props.book && (
+          <Link to={`/books/${this.props.book.id}`} className="book-link">
+            {this.props.book.title}
+          </Link>
+        )}
       </div>
     );
   }
@@ -22,7 +28,11 @@ Comment.propTypes = {
   userId: PropTypes.number,
   userName: PropTypes.string,
   date: PropTypes.string,
-  message: PropTypes.string
+  message: PropTypes.string,
+  book: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string
+  })
 };
 
 export default Comment;

@@ -15,6 +15,7 @@ export default class Comments extends Component {
             userId={comment.user.id}
             date={new Date(comment.created_at).toLocaleDateString('es-AR')}
             message={comment.content}
+            book={comment.book}
           />
         ))}
       </div>

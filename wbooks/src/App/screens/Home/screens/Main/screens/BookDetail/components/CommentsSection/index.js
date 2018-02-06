@@ -12,8 +12,7 @@ const getLastFourComments = comments =>
 
 const mapStateToProps = state => ({
   userId: state.user.id,
-  comments: getLastFourComments(state.comments.commentsList),
-  bookId: state.book.info.id
+  comments: getLastFourComments(state.comments.commentsList)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,3 +1,12 @@
+@import '../../../../../../../../../../variables/_colors.scss';
+
 .comment {
   width: 650px;
+}
+
+.book-link {
+  position: absolute;
+  right: 550px;
+  color: $blue;
+  font-weight: bold;
 }

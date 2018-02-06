@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import UserInfo from './components/UserInfo';
@@ -14,11 +14,11 @@ export default class Profile extends Component {
       return <span>loading...</span>;
     }
     return (
-      <div>
+      <Fragment>
         <UserInfo info={this.props.info} />
         <RentsAndWishlist rents={this.props.rents} wishlist={this.props.wishlist} />
         <Comments comments={this.props.comments} />
-      </div>
+      </Fragment>
     );
   }
 }

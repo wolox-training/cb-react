@@ -11,7 +11,7 @@ import './styles.css';
 
 class BookDetail extends React.Component {
   componentDidMount() {
-    this.props.onMount(this.props.match.params.id);
+    this.props.onMount(Number(this.props.match.params.id));
   }
 
   render() {
@@ -28,7 +28,7 @@ class BookDetail extends React.Component {
         </Link>
         <Details />
         <Recommendations />
-        <CommentsSection />
+        <CommentsSection bookId={Number(this.props.match.params.id)} />
       </div>
     );
   }
