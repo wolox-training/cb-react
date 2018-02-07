@@ -1,3 +1,5 @@
+@import '../../variables/_colors';
+
 .login-page {
   margin: 250px auto;
   display: flex;
@@ -6,5 +8,25 @@
 
   .signup-link {
     margin: 10px 0 0 0;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+
+  .login-input {
+    margin: 10px 0;
+    padding: 5px 5px;
+    border: none;
+    border-bottom: $light-grey 1px solid;
+    width: 250px;
+  }
+
+  .error-msg {
+    color: red;
+    font-size: 12px;
   }
 }

@@ -1,0 +1,39 @@
+@import '../../../../../../../../variables/_colors.scss';
+
+.user-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 60px;
+
+    .user-name {
+      color: $green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .user-email {
+      font-size: 12px;
+      margin: 10px 0 20px 0;
+    }
+
+    .user-counters {
+      font-size: 14px;
+
+
+      .user-counter {
+        padding: 5px 10px;
+
+        &:first-child {
+          padding-left: 0;
+          border-right: 1px $green solid;
+        }
+      }
+    }
+  }
+}

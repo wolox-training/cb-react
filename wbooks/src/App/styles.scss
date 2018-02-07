@@ -90,3 +90,15 @@ button {
   color: red;
   font-size: 12px;
 }
+
+.user-avatar {
+  background-color: #aaa;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+
+  &.big-avatar {
+    width: 105px;
+    height: 105px;
+  }
+}
